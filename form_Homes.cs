@@ -32,5 +32,10 @@ namespace Astect
             formLogIn.Show();
             this.Hide();
         }
+
+        private void lbl_HomeUserName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

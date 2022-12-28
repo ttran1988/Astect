@@ -50,6 +50,7 @@
             this.lbl_HomeUserName.Name = "lbl_HomeUserName";
             this.lbl_HomeUserName.Size = new System.Drawing.Size(100, 23);
             this.lbl_HomeUserName.TabIndex = 0;
+            this.lbl_HomeUserName.Click += new System.EventHandler(this.lbl_HomeUserName_Click);
             // 
             // btn_TestUserID
             // 
@@ -83,6 +84,7 @@
             this.Controls.Add(this.lbl_HomeUserName);
             this.Controls.Add(this.lbl_Welcome);
             this.Name = "form_Homes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHomes";
             this.ResumeLayout(false);
 
