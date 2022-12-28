@@ -38,7 +38,6 @@ namespace Astect
 
             try
             {
-                //db.getUserTable(userName, userPassword);
                 if (db.getUserTable(userName,userPassword) == true ) {
                     this.Hide();
                 }
