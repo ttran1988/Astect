@@ -55,14 +55,52 @@ namespace Astect
         {
             int userID = Convert.ToInt32(form_LogIn.globalUserID);
             string query = "SELECT HomeName, HomeAddress, HomeCity, HomeState, HomeZip FROM Homes WHERE UserID = '" + userID + "'";
-            SqlConnection con = new SqlConnection(this.connectionString);
-            con.Open();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
+            sqlConnect = new SqlConnection(this.connectionString);
+            sqlConnect.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, sqlConnect);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
             DataGridView dataGridView = dgv;
             dataGridView.DataSource = ds.Tables[0];
+        }
+
+        public bool getUserTable(string username, string password)
+        {
+            bool check = false;
+
+            sqlConnect = new SqlConnection(connectionString);
+            sqlConnect.Open();
+
+            try
+            {
+                string query = "SELECT * FROM Users WHERE username = '" + username + "' AND Pword = '" + password + "';";
+                SqlDataAdapter sda = new SqlDataAdapter(query, sqlConnect);
+                DataTable dtable = new DataTable();
+                sda.Fill(dtable);
+
+                if (dtable.Rows.Count > 0)
+                {
+                    form_LogIn.globalUserName = username;
+                    form_Homes homes = new form_Homes(form_LogIn.globalUserName);
+                    form_LogIn.globalUserID = getUserID(form_LogIn.globalUserName);
+                    homes.Show();
+                    check = true;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login Details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnect.Close();
+            }
+            return check;
         }
     }
 }
