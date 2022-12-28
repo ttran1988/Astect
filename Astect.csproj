@@ -58,6 +58,12 @@
     <Compile Include="form_Homes.Designer.cs">
       <DependentUpon>form_Homes.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Items.Designer.cs">
+      <DependentUpon>form_Items.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="form_Homes.resx">
       <DependentUpon>form_Homes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Items.resx">
+      <DependentUpon>form_Items.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_LogIn.resx">
       <DependentUpon>form_LogIn.cs</DependentUpon>

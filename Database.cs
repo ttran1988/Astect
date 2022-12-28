@@ -54,7 +54,22 @@ namespace Astect
         public void getUserHomeTable(DataGridView dgv)
         {
             int userID = Convert.ToInt32(form_LogIn.globalUserID);
-            string query = "SELECT HomeName, HomeAddress, HomeCity, HomeState, HomeZip FROM Homes WHERE UserID = '" + userID + "'";
+            string query = "SELECT HomeID, HomeName, HomeAddress, HomeCity, HomeState, HomeZip FROM Homes WHERE UserID = '" + userID + "'";
+            sqlConnect = new SqlConnection(this.connectionString);
+            sqlConnect.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, sqlConnect);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            DataGridView dataGridView = dgv;
+            dataGridView.DataSource = ds.Tables[0];
+            dataGridView.Columns["HomeID"].Visible = false;
+        }
+
+        public void getHomeItemTable(DataGridView dgv)
+        {
+            int homeID = Convert.ToInt32(form_Homes.globalHomeID);
+            string query = "SELECT ItemName, ItemDescription, ItemPrice FROM Items WHERE HomeID = '" + homeID + "'";
             sqlConnect = new SqlConnection(this.connectionString);
             sqlConnect.Open();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, sqlConnect);
@@ -82,7 +97,7 @@ namespace Astect
                 if (dtable.Rows.Count > 0)
                 {
                     form_LogIn.globalUserName = username;
-                    form_Homes homes = new form_Homes(form_LogIn.globalUserName);
+                    form_Homes homes = new form_Homes();
                     form_LogIn.globalUserID = getUserID(form_LogIn.globalUserName);
                     homes.Show();
                     check = true;
