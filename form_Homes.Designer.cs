@@ -32,6 +32,8 @@
             this.lbl_HomeUserName = new System.Windows.Forms.Label();
             this.btn_TestUserID = new System.Windows.Forms.Button();
             this.btn_HomeBack = new System.Windows.Forms.Button();
+            this.dataGridViewHome = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Welcome
@@ -74,11 +76,20 @@
             this.btn_HomeBack.UseVisualStyleBackColor = true;
             this.btn_HomeBack.Click += new System.EventHandler(this.btn_HomeBack_Click);
             // 
+            // dataGridViewHome
+            // 
+            this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHome.Location = new System.Drawing.Point(59, 66);
+            this.dataGridViewHome.Name = "dataGridViewHome";
+            this.dataGridViewHome.Size = new System.Drawing.Size(614, 244);
+            this.dataGridViewHome.TabIndex = 3;
+            // 
             // form_Homes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridViewHome);
             this.Controls.Add(this.btn_HomeBack);
             this.Controls.Add(this.btn_TestUserID);
             this.Controls.Add(this.lbl_HomeUserName);
@@ -86,6 +97,8 @@
             this.Name = "form_Homes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHomes";
+            this.Load += new System.EventHandler(this.form_Homes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,5 +109,6 @@
         private System.Windows.Forms.Label lbl_HomeUserName;
         private System.Windows.Forms.Button btn_TestUserID;
         private System.Windows.Forms.Button btn_HomeBack;
+        private System.Windows.Forms.DataGridView dataGridViewHome;
     }
 }
