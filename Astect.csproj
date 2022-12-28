@@ -46,14 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AstectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AstectDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
+    <Compile Include="form_Homes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="form_Homes.Designer.cs">
+      <DependentUpon>form_Homes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_LogIn.Designer.cs">
+      <DependentUpon>form_LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form_Homes.resx">
+      <DependentUpon>form_Homes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_LogIn.resx">
+      <DependentUpon>form_LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +81,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AstectDataSet.xsc">
+      <DependentUpon>AstectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AstectDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AstectDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AstectDataSet.xss">
+      <DependentUpon>AstectDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
