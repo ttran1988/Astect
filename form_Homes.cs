@@ -13,19 +13,14 @@ namespace Astect
 {
     public partial class form_Homes : Form
     {
-        public form_Homes(string username)
+        public form_Homes()
         {
             InitializeComponent();
-            lbl_HomeUserName.Text = username;
         }
 
+        public static string globalHomeName = "";
+        public static string globalHomeID = "";
         Database db = new Database();
-
-        private void btn_TestUserID_Click(object sender, EventArgs e)
-        {
-            string userID = db.getUserID(form_LogIn.globalUserName);
-            MessageBox.Show(userID);
-        }
 
         private void btn_HomeBack_Click(object sender, EventArgs e)
         {
@@ -37,11 +32,18 @@ namespace Astect
         private void form_Homes_Load(object sender, EventArgs e)
         {
             db.getUserHomeTable(dataGridViewHome);
+            lbl_HomeUserName.Text = form_LogIn.globalUserName;
         }
 
-        private void lbl_HomeUserName_Click(object sender, EventArgs e)
+        private void btn_SelectHome_Click(object sender, EventArgs e)
         {
-
+            int selectRowIndex = dataGridViewHome.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridViewHome.Rows[selectRowIndex];
+            globalHomeID = Convert.ToString(selectedRow.Cells["HomeID"].Value);
+            globalHomeName = Convert.ToString(selectedRow.Cells["HomeName"].Value);
+            form_Items formItems = new form_Items();
+            formItems.Show();
+            this.Hide();
         }
     }
 }

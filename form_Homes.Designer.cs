@@ -30,7 +30,7 @@
         {
             this.lbl_Welcome = new System.Windows.Forms.Label();
             this.lbl_HomeUserName = new System.Windows.Forms.Label();
-            this.btn_TestUserID = new System.Windows.Forms.Button();
+            this.btn_SelectHome = new System.Windows.Forms.Button();
             this.btn_HomeBack = new System.Windows.Forms.Button();
             this.dataGridViewHome = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
@@ -52,18 +52,18 @@
             this.lbl_HomeUserName.Name = "lbl_HomeUserName";
             this.lbl_HomeUserName.Size = new System.Drawing.Size(100, 23);
             this.lbl_HomeUserName.TabIndex = 0;
-            this.lbl_HomeUserName.Click += new System.EventHandler(this.lbl_HomeUserName_Click);
+            this.lbl_HomeUserName.Text = "User";
             // 
-            // btn_TestUserID
+            // btn_SelectHome
             // 
-            this.btn_TestUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TestUserID.Location = new System.Drawing.Point(59, 331);
-            this.btn_TestUserID.Name = "btn_TestUserID";
-            this.btn_TestUserID.Size = new System.Drawing.Size(168, 58);
-            this.btn_TestUserID.TabIndex = 1;
-            this.btn_TestUserID.Text = "Test Get User ID";
-            this.btn_TestUserID.UseVisualStyleBackColor = true;
-            this.btn_TestUserID.Click += new System.EventHandler(this.btn_TestUserID_Click);
+            this.btn_SelectHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SelectHome.Location = new System.Drawing.Point(59, 331);
+            this.btn_SelectHome.Name = "btn_SelectHome";
+            this.btn_SelectHome.Size = new System.Drawing.Size(168, 58);
+            this.btn_SelectHome.TabIndex = 1;
+            this.btn_SelectHome.Text = "Select";
+            this.btn_SelectHome.UseVisualStyleBackColor = true;
+            this.btn_SelectHome.Click += new System.EventHandler(this.btn_SelectHome_Click);
             // 
             // btn_HomeBack
             // 
@@ -81,6 +81,7 @@
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHome.Location = new System.Drawing.Point(59, 66);
             this.dataGridViewHome.Name = "dataGridViewHome";
+            this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewHome.Size = new System.Drawing.Size(614, 244);
             this.dataGridViewHome.TabIndex = 3;
             // 
@@ -91,7 +92,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridViewHome);
             this.Controls.Add(this.btn_HomeBack);
-            this.Controls.Add(this.btn_TestUserID);
+            this.Controls.Add(this.btn_SelectHome);
             this.Controls.Add(this.lbl_HomeUserName);
             this.Controls.Add(this.lbl_Welcome);
             this.Name = "form_Homes";
@@ -107,7 +108,7 @@
 
         private System.Windows.Forms.Label lbl_Welcome;
         private System.Windows.Forms.Label lbl_HomeUserName;
-        private System.Windows.Forms.Button btn_TestUserID;
+        private System.Windows.Forms.Button btn_SelectHome;
         private System.Windows.Forms.Button btn_HomeBack;
         private System.Windows.Forms.DataGridView dataGridViewHome;
     }
