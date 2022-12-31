@@ -15,7 +15,7 @@ namespace Astect
         SqlConnection sqlConnect;
         public Database()
         {
-            connectionString = "Server=tcp:astect.database.windows.net,1433;Initial Catalog=Astect;Persist Security Info=False;User ID=thanhAstect;Password=Huya6044;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
+            connectionString = "Server=tcp:astect.database.windows.net,1433;Initial Catalog=Astect;Persist Security Info=False;User ID=systemAccess;Password=Jaxa8233;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
         }
 
         public Database(string connect)
