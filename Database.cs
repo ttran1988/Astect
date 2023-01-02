@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Astect
@@ -36,7 +39,15 @@ namespace Astect
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
             sqlCommand.ExecuteNonQuery();
         }
-        public string getUserID(string username)
+        public void addItem(string item, string description, string price, Int16 homeId)
+        {
+            sqlConnect = new SqlConnection(connectionString);
+            sqlConnect.Open();
+            string query = "insert into Items (ItemName, ItemDescription, ItemPrice, HomeID) values ('" + item + "','" + description + "','" + price + "'," + homeId.ToString() + ")";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+            sqlCommand.ExecuteNonQuery();
+        }
+         public string getUserID(string username)
         {
             string getUserID = "";
             SqlDataReader dataReader;

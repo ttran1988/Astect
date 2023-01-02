@@ -32,5 +32,29 @@ namespace Astect
             formHomes.Show();
             this.Hide();
         }
+
+        private void btn_AddItem_Click(object sender, EventArgs e)
+        {
+            txt_itemName.Text = "";
+            txt_itemDesc.Text = "";
+            txt_itemPrice.Text = "";
+ 
+            pnl_addItem.Location = new Point(16, 96);
+            pnl_addItem.Size = new Size(776, 384);
+            pnl_addItem.Visible = true;
+            txt_itemName.Focus();
+        }
+
+        private void btn_CancelItem_Click(object sender, EventArgs e)
+        {
+            pnl_addItem.Visible = false;
+        }
+
+        private void btn_ItemSave_Click(object sender, EventArgs e)
+        {
+            db.addItem(txt_itemName.Text, txt_itemDesc.Text, txt_itemPrice.Text, Convert.ToInt16(form_Homes.globalHomeID));
+            db.getHomeItemTable(dataGridViewItems);
+            pnl_addItem.Visible = false;
+        }
     }
 }

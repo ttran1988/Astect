@@ -104,9 +104,10 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(650, 37);
+            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_Add.Location = new System.Drawing.Point(618, 34);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(23, 23);
+            this.btn_Add.Size = new System.Drawing.Size(55, 26);
             this.btn_Add.TabIndex = 4;
             this.btn_Add.Text = "+";
             this.toolTip1.SetToolTip(this.btn_Add, "Add Home");
@@ -127,9 +128,9 @@
             this.pnl_AddHome.Controls.Add(this.btn_CancelHome);
             this.pnl_AddHome.Controls.Add(this.txt_HomeName);
             this.pnl_AddHome.Controls.Add(this.lbl_HomeName);
-            this.pnl_AddHome.Location = new System.Drawing.Point(47, 361);
+            this.pnl_AddHome.Location = new System.Drawing.Point(312, 341);
             this.pnl_AddHome.Name = "pnl_AddHome";
-            this.pnl_AddHome.Size = new System.Drawing.Size(65, 50);
+            this.pnl_AddHome.Size = new System.Drawing.Size(44, 25);
             this.pnl_AddHome.TabIndex = 5;
             this.pnl_AddHome.Visible = false;
             // 
