@@ -45,5 +45,38 @@ namespace Astect
             formItems.Show();
             this.Hide();
         }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            txt_HomeName.Text = "";
+            txt_HomeAddress.Text = "";
+            txt_HomeCity.Text = "";
+            txt_HomeState.Text = "";
+            txt_HomeZIP.Text = "";
+
+            pnl_AddHome.Location = new Point(47, 37);
+            pnl_AddHome.Size = new Size(643, 374);
+            pnl_AddHome.Visible = true;
+            txt_HomeName.Focus();
+        }
+
+        private void btn_CancelHome_Click(object sender, EventArgs e)
+        {
+            pnl_AddHome.Visible = false;
+        }
+
+        private void btn_HomeSave_Click(object sender, EventArgs e)
+        {
+            db.addHome(txt_HomeName.Text, txt_HomeAddress.Text, txt_HomeCity.Text, txt_HomeState.Text, txt_HomeZIP.Text, Convert.ToInt16(form_LogIn.globalUserID));
+
+            db.getUserHomeTable(dataGridViewHome);
+
+            pnl_AddHome.Visible = false;
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Astect
 {
@@ -27,7 +28,14 @@ namespace Astect
         {
             return this.connectionString;
         }
-
+        public void addHome(string name, string address, string city, string state, string zip, Int16 userId)
+        {
+            sqlConnect = new SqlConnection(connectionString);
+            sqlConnect.Open();
+            string query = "insert into Homes (HomeName, HomeAddress, HomeCity, HomeState, HomeZip, UserID) values ('" + name + "','" + address + "','" + city + "','" + state + "','" + zip + "'," + userId.ToString() + ")";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+            sqlCommand.ExecuteNonQuery();
+        }
         public string getUserID(string username)
         {
             string getUserID = "";
