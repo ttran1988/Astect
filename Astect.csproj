@@ -70,6 +70,12 @@
     <Compile Include="form_LogIn.Designer.cs">
       <DependentUpon>form_LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="form_Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Registration.Designer.cs">
+      <DependentUpon>form_Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="form_Homes.resx">
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_LogIn.resx">
       <DependentUpon>form_LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Registration.resx">
+      <DependentUpon>form_Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

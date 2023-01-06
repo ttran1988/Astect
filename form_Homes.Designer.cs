@@ -36,18 +36,18 @@
             this.dataGridViewHome = new System.Windows.Forms.DataGridView();
             this.btn_Add = new System.Windows.Forms.Button();
             this.pnl_AddHome = new System.Windows.Forms.Panel();
-            this.lbl_HomeName = new System.Windows.Forms.Label();
-            this.txt_HomeName = new System.Windows.Forms.TextBox();
-            this.btn_CancelHome = new System.Windows.Forms.Button();
-            this.btn_HomeSave = new System.Windows.Forms.Button();
-            this.txt_HomeAddress = new System.Windows.Forms.TextBox();
-            this.lbl_HomeAddress = new System.Windows.Forms.Label();
-            this.txt_HomeCity = new System.Windows.Forms.TextBox();
-            this.lbl_HomeCity = new System.Windows.Forms.Label();
-            this.txt_HomeState = new System.Windows.Forms.TextBox();
-            this.lbl_HomeState = new System.Windows.Forms.Label();
             this.txt_HomeZIP = new System.Windows.Forms.TextBox();
             this.lbl_HomeZIP = new System.Windows.Forms.Label();
+            this.txt_HomeState = new System.Windows.Forms.TextBox();
+            this.lbl_HomeState = new System.Windows.Forms.Label();
+            this.txt_HomeCity = new System.Windows.Forms.TextBox();
+            this.lbl_HomeCity = new System.Windows.Forms.Label();
+            this.txt_HomeAddress = new System.Windows.Forms.TextBox();
+            this.lbl_HomeAddress = new System.Windows.Forms.Label();
+            this.btn_HomeSave = new System.Windows.Forms.Button();
+            this.btn_CancelHome = new System.Windows.Forms.Button();
+            this.txt_HomeName = new System.Windows.Forms.TextBox();
+            this.lbl_HomeName = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             this.pnl_AddHome.SuspendLayout();
@@ -56,27 +56,30 @@
             // lbl_Welcome
             // 
             this.lbl_Welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Welcome.Location = new System.Drawing.Point(12, 9);
+            this.lbl_Welcome.Location = new System.Drawing.Point(18, 14);
+            this.lbl_Welcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Welcome.Name = "lbl_Welcome";
-            this.lbl_Welcome.Size = new System.Drawing.Size(100, 23);
+            this.lbl_Welcome.Size = new System.Drawing.Size(150, 35);
             this.lbl_Welcome.TabIndex = 0;
             this.lbl_Welcome.Text = "Welcome";
             // 
             // lbl_HomeUserName
             // 
             this.lbl_HomeUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeUserName.Location = new System.Drawing.Point(127, 9);
+            this.lbl_HomeUserName.Location = new System.Drawing.Point(190, 14);
+            this.lbl_HomeUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_HomeUserName.Name = "lbl_HomeUserName";
-            this.lbl_HomeUserName.Size = new System.Drawing.Size(100, 23);
+            this.lbl_HomeUserName.Size = new System.Drawing.Size(150, 35);
             this.lbl_HomeUserName.TabIndex = 0;
             this.lbl_HomeUserName.Text = "User";
             // 
             // btn_SelectHome
             // 
             this.btn_SelectHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SelectHome.Location = new System.Drawing.Point(59, 331);
+            this.btn_SelectHome.Location = new System.Drawing.Point(88, 509);
+            this.btn_SelectHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_SelectHome.Name = "btn_SelectHome";
-            this.btn_SelectHome.Size = new System.Drawing.Size(168, 58);
+            this.btn_SelectHome.Size = new System.Drawing.Size(252, 89);
             this.btn_SelectHome.TabIndex = 1;
             this.btn_SelectHome.Text = "Select";
             this.btn_SelectHome.UseVisualStyleBackColor = true;
@@ -85,9 +88,10 @@
             // btn_HomeBack
             // 
             this.btn_HomeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HomeBack.Location = new System.Drawing.Point(505, 331);
+            this.btn_HomeBack.Location = new System.Drawing.Point(758, 509);
+            this.btn_HomeBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_HomeBack.Name = "btn_HomeBack";
-            this.btn_HomeBack.Size = new System.Drawing.Size(168, 58);
+            this.btn_HomeBack.Size = new System.Drawing.Size(252, 89);
             this.btn_HomeBack.TabIndex = 2;
             this.btn_HomeBack.Text = "Back";
             this.btn_HomeBack.UseVisualStyleBackColor = true;
@@ -96,18 +100,21 @@
             // dataGridViewHome
             // 
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHome.Location = new System.Drawing.Point(59, 66);
+            this.dataGridViewHome.Location = new System.Drawing.Point(88, 102);
+            this.dataGridViewHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewHome.Name = "dataGridViewHome";
+            this.dataGridViewHome.RowHeadersWidth = 62;
             this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHome.Size = new System.Drawing.Size(614, 244);
+            this.dataGridViewHome.Size = new System.Drawing.Size(921, 375);
             this.dataGridViewHome.TabIndex = 3;
             // 
             // btn_Add
             // 
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Add.Location = new System.Drawing.Point(618, 34);
+            this.btn_Add.Location = new System.Drawing.Point(927, 52);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(55, 26);
+            this.btn_Add.Size = new System.Drawing.Size(82, 40);
             this.btn_Add.TabIndex = 4;
             this.btn_Add.Text = "+";
             this.toolTip1.SetToolTip(this.btn_Add, "Add Home");
@@ -128,128 +135,141 @@
             this.pnl_AddHome.Controls.Add(this.btn_CancelHome);
             this.pnl_AddHome.Controls.Add(this.txt_HomeName);
             this.pnl_AddHome.Controls.Add(this.lbl_HomeName);
-            this.pnl_AddHome.Location = new System.Drawing.Point(312, 341);
+            this.pnl_AddHome.Location = new System.Drawing.Point(468, 525);
+            this.pnl_AddHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnl_AddHome.Name = "pnl_AddHome";
-            this.pnl_AddHome.Size = new System.Drawing.Size(44, 25);
+            this.pnl_AddHome.Size = new System.Drawing.Size(66, 38);
             this.pnl_AddHome.TabIndex = 5;
             this.pnl_AddHome.Visible = false;
-            // 
-            // lbl_HomeName
-            // 
-            this.lbl_HomeName.AutoSize = true;
-            this.lbl_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeName.Location = new System.Drawing.Point(22, 29);
-            this.lbl_HomeName.Name = "lbl_HomeName";
-            this.lbl_HomeName.Size = new System.Drawing.Size(102, 20);
-            this.lbl_HomeName.TabIndex = 0;
-            this.lbl_HomeName.Text = "Home Name:";
-            // 
-            // txt_HomeName
-            // 
-            this.txt_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HomeName.Location = new System.Drawing.Point(150, 26);
-            this.txt_HomeName.MaxLength = 25;
-            this.txt_HomeName.Name = "txt_HomeName";
-            this.txt_HomeName.Size = new System.Drawing.Size(229, 26);
-            this.txt_HomeName.TabIndex = 1;
-            // 
-            // btn_CancelHome
-            // 
-            this.btn_CancelHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CancelHome.Location = new System.Drawing.Point(529, 329);
-            this.btn_CancelHome.Name = "btn_CancelHome";
-            this.btn_CancelHome.Size = new System.Drawing.Size(97, 33);
-            this.btn_CancelHome.TabIndex = 7;
-            this.btn_CancelHome.Text = "Cancel";
-            this.btn_CancelHome.UseVisualStyleBackColor = true;
-            this.btn_CancelHome.Click += new System.EventHandler(this.btn_CancelHome_Click);
-            // 
-            // btn_HomeSave
-            // 
-            this.btn_HomeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HomeSave.Location = new System.Drawing.Point(402, 329);
-            this.btn_HomeSave.Name = "btn_HomeSave";
-            this.btn_HomeSave.Size = new System.Drawing.Size(97, 33);
-            this.btn_HomeSave.TabIndex = 6;
-            this.btn_HomeSave.Text = "Save";
-            this.btn_HomeSave.UseVisualStyleBackColor = true;
-            this.btn_HomeSave.Click += new System.EventHandler(this.btn_HomeSave_Click);
-            // 
-            // txt_HomeAddress
-            // 
-            this.txt_HomeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HomeAddress.Location = new System.Drawing.Point(150, 71);
-            this.txt_HomeAddress.MaxLength = 50;
-            this.txt_HomeAddress.Name = "txt_HomeAddress";
-            this.txt_HomeAddress.Size = new System.Drawing.Size(229, 26);
-            this.txt_HomeAddress.TabIndex = 2;
-            // 
-            // lbl_HomeAddress
-            // 
-            this.lbl_HomeAddress.AutoSize = true;
-            this.lbl_HomeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeAddress.Location = new System.Drawing.Point(22, 74);
-            this.lbl_HomeAddress.Name = "lbl_HomeAddress";
-            this.lbl_HomeAddress.Size = new System.Drawing.Size(119, 20);
-            this.lbl_HomeAddress.TabIndex = 4;
-            this.lbl_HomeAddress.Text = "Home Address:";
-            // 
-            // txt_HomeCity
-            // 
-            this.txt_HomeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HomeCity.Location = new System.Drawing.Point(150, 119);
-            this.txt_HomeCity.MaxLength = 25;
-            this.txt_HomeCity.Name = "txt_HomeCity";
-            this.txt_HomeCity.Size = new System.Drawing.Size(229, 26);
-            this.txt_HomeCity.TabIndex = 3;
-            // 
-            // lbl_HomeCity
-            // 
-            this.lbl_HomeCity.AutoSize = true;
-            this.lbl_HomeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeCity.Location = new System.Drawing.Point(22, 122);
-            this.lbl_HomeCity.Name = "lbl_HomeCity";
-            this.lbl_HomeCity.Size = new System.Drawing.Size(86, 20);
-            this.lbl_HomeCity.TabIndex = 6;
-            this.lbl_HomeCity.Text = "Home City:";
-            // 
-            // txt_HomeState
-            // 
-            this.txt_HomeState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HomeState.Location = new System.Drawing.Point(150, 168);
-            this.txt_HomeState.MaxLength = 2;
-            this.txt_HomeState.Name = "txt_HomeState";
-            this.txt_HomeState.Size = new System.Drawing.Size(229, 26);
-            this.txt_HomeState.TabIndex = 4;
-            // 
-            // lbl_HomeState
-            // 
-            this.lbl_HomeState.AutoSize = true;
-            this.lbl_HomeState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeState.Location = new System.Drawing.Point(22, 171);
-            this.lbl_HomeState.Name = "lbl_HomeState";
-            this.lbl_HomeState.Size = new System.Drawing.Size(99, 20);
-            this.lbl_HomeState.TabIndex = 8;
-            this.lbl_HomeState.Text = "Home State:";
             // 
             // txt_HomeZIP
             // 
             this.txt_HomeZIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HomeZIP.Location = new System.Drawing.Point(150, 217);
+            this.txt_HomeZIP.Location = new System.Drawing.Point(225, 334);
+            this.txt_HomeZIP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_HomeZIP.MaxLength = 10;
             this.txt_HomeZIP.Name = "txt_HomeZIP";
-            this.txt_HomeZIP.Size = new System.Drawing.Size(229, 26);
+            this.txt_HomeZIP.Size = new System.Drawing.Size(342, 35);
             this.txt_HomeZIP.TabIndex = 5;
             // 
             // lbl_HomeZIP
             // 
             this.lbl_HomeZIP.AutoSize = true;
             this.lbl_HomeZIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeZIP.Location = new System.Drawing.Point(22, 220);
+            this.lbl_HomeZIP.Location = new System.Drawing.Point(33, 338);
+            this.lbl_HomeZIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_HomeZIP.Name = "lbl_HomeZIP";
-            this.lbl_HomeZIP.Size = new System.Drawing.Size(85, 20);
+            this.lbl_HomeZIP.Size = new System.Drawing.Size(126, 29);
             this.lbl_HomeZIP.TabIndex = 10;
             this.lbl_HomeZIP.Text = "Home ZIP:";
+            // 
+            // txt_HomeState
+            // 
+            this.txt_HomeState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HomeState.Location = new System.Drawing.Point(225, 258);
+            this.txt_HomeState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_HomeState.MaxLength = 2;
+            this.txt_HomeState.Name = "txt_HomeState";
+            this.txt_HomeState.Size = new System.Drawing.Size(342, 35);
+            this.txt_HomeState.TabIndex = 4;
+            // 
+            // lbl_HomeState
+            // 
+            this.lbl_HomeState.AutoSize = true;
+            this.lbl_HomeState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HomeState.Location = new System.Drawing.Point(33, 263);
+            this.lbl_HomeState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_HomeState.Name = "lbl_HomeState";
+            this.lbl_HomeState.Size = new System.Drawing.Size(145, 29);
+            this.lbl_HomeState.TabIndex = 8;
+            this.lbl_HomeState.Text = "Home State:";
+            // 
+            // txt_HomeCity
+            // 
+            this.txt_HomeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HomeCity.Location = new System.Drawing.Point(225, 183);
+            this.txt_HomeCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_HomeCity.MaxLength = 25;
+            this.txt_HomeCity.Name = "txt_HomeCity";
+            this.txt_HomeCity.Size = new System.Drawing.Size(342, 35);
+            this.txt_HomeCity.TabIndex = 3;
+            // 
+            // lbl_HomeCity
+            // 
+            this.lbl_HomeCity.AutoSize = true;
+            this.lbl_HomeCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HomeCity.Location = new System.Drawing.Point(33, 188);
+            this.lbl_HomeCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_HomeCity.Name = "lbl_HomeCity";
+            this.lbl_HomeCity.Size = new System.Drawing.Size(130, 29);
+            this.lbl_HomeCity.TabIndex = 6;
+            this.lbl_HomeCity.Text = "Home City:";
+            // 
+            // txt_HomeAddress
+            // 
+            this.txt_HomeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HomeAddress.Location = new System.Drawing.Point(225, 109);
+            this.txt_HomeAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_HomeAddress.MaxLength = 50;
+            this.txt_HomeAddress.Name = "txt_HomeAddress";
+            this.txt_HomeAddress.Size = new System.Drawing.Size(342, 35);
+            this.txt_HomeAddress.TabIndex = 2;
+            // 
+            // lbl_HomeAddress
+            // 
+            this.lbl_HomeAddress.AutoSize = true;
+            this.lbl_HomeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HomeAddress.Location = new System.Drawing.Point(33, 114);
+            this.lbl_HomeAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_HomeAddress.Name = "lbl_HomeAddress";
+            this.lbl_HomeAddress.Size = new System.Drawing.Size(179, 29);
+            this.lbl_HomeAddress.TabIndex = 4;
+            this.lbl_HomeAddress.Text = "Home Address:";
+            // 
+            // btn_HomeSave
+            // 
+            this.btn_HomeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HomeSave.Location = new System.Drawing.Point(603, 506);
+            this.btn_HomeSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_HomeSave.Name = "btn_HomeSave";
+            this.btn_HomeSave.Size = new System.Drawing.Size(146, 51);
+            this.btn_HomeSave.TabIndex = 6;
+            this.btn_HomeSave.Text = "Save";
+            this.btn_HomeSave.UseVisualStyleBackColor = true;
+            this.btn_HomeSave.Click += new System.EventHandler(this.btn_HomeSave_Click);
+            // 
+            // btn_CancelHome
+            // 
+            this.btn_CancelHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelHome.Location = new System.Drawing.Point(794, 506);
+            this.btn_CancelHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_CancelHome.Name = "btn_CancelHome";
+            this.btn_CancelHome.Size = new System.Drawing.Size(146, 51);
+            this.btn_CancelHome.TabIndex = 7;
+            this.btn_CancelHome.Text = "Cancel";
+            this.btn_CancelHome.UseVisualStyleBackColor = true;
+            this.btn_CancelHome.Click += new System.EventHandler(this.btn_CancelHome_Click);
+            // 
+            // txt_HomeName
+            // 
+            this.txt_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HomeName.Location = new System.Drawing.Point(225, 40);
+            this.txt_HomeName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_HomeName.MaxLength = 25;
+            this.txt_HomeName.Name = "txt_HomeName";
+            this.txt_HomeName.Size = new System.Drawing.Size(342, 35);
+            this.txt_HomeName.TabIndex = 1;
+            // 
+            // lbl_HomeName
+            // 
+            this.lbl_HomeName.AutoSize = true;
+            this.lbl_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HomeName.Location = new System.Drawing.Point(33, 45);
+            this.lbl_HomeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_HomeName.Name = "lbl_HomeName";
+            this.lbl_HomeName.Size = new System.Drawing.Size(155, 29);
+            this.lbl_HomeName.TabIndex = 0;
+            this.lbl_HomeName.Text = "Home Name:";
             // 
             // toolTip1
             // 
@@ -259,9 +279,9 @@
             // 
             // form_Homes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 439);
+            this.ClientSize = new System.Drawing.Size(1120, 675);
             this.Controls.Add(this.pnl_AddHome);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.dataGridViewHome);
@@ -269,6 +289,7 @@
             this.Controls.Add(this.btn_SelectHome);
             this.Controls.Add(this.lbl_HomeUserName);
             this.Controls.Add(this.lbl_Welcome);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "form_Homes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHomes";
