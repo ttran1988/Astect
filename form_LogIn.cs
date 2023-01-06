@@ -47,5 +47,12 @@ namespace Astect
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_UserRegistration_Click(object sender, EventArgs e)
+        {
+            form_Registration register = new form_Registration();
+            register.Visible = true;
+            this.Hide();
+        }
     }
 }
