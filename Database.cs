@@ -99,6 +99,53 @@ namespace Astect
             dataGridView.DataSource = ds.Tables[0];
         }
 
+        public void createNewUser(String username, String password)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO Users (UserName, Pword) VALUES ('"+username+"','"+password+"')";
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+                    sqlConnect.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public List<String> getUserNames()
+        {
+            List<String> usernamesList = new List<String>();
+
+
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT UserName FROM Users";
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+                    sqlConnect.Open();
+
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        usernamesList.Add(Convert.ToString(dataReader["UserName"]));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return usernamesList;
+        }
+
         public bool getUserTable(string username, string password)
         {
             bool check = false;
