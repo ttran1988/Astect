@@ -34,15 +34,18 @@
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.txt_UserPassword = new System.Windows.Forms.TextBox();
             this.btn_CreateUser = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_RegistrationBack
             // 
             this.btn_RegistrationBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RegistrationBack.Location = new System.Drawing.Point(817, 511);
+            this.btn_RegistrationBack.Location = new System.Drawing.Point(545, 332);
+            this.btn_RegistrationBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_RegistrationBack.Name = "btn_RegistrationBack";
-            this.btn_RegistrationBack.Size = new System.Drawing.Size(219, 85);
-            this.btn_RegistrationBack.TabIndex = 0;
+            this.btn_RegistrationBack.Size = new System.Drawing.Size(146, 55);
+            this.btn_RegistrationBack.TabIndex = 4;
             this.btn_RegistrationBack.Text = "Back";
             this.btn_RegistrationBack.UseVisualStyleBackColor = true;
             this.btn_RegistrationBack.Click += new System.EventHandler(this.btn_RegistrationBack_Click);
@@ -50,59 +53,86 @@
             // lbl_UserName
             // 
             this.lbl_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserName.Location = new System.Drawing.Point(233, 148);
+            this.lbl_UserName.Location = new System.Drawing.Point(155, 96);
+            this.lbl_UserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_UserName.Name = "lbl_UserName";
-            this.lbl_UserName.Size = new System.Drawing.Size(148, 39);
+            this.lbl_UserName.Size = new System.Drawing.Size(99, 25);
             this.lbl_UserName.TabIndex = 1;
             this.lbl_UserName.Text = "Username:";
             // 
             // lbl_UserPassword
             // 
             this.lbl_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserPassword.Location = new System.Drawing.Point(233, 312);
+            this.lbl_UserPassword.Location = new System.Drawing.Point(155, 158);
+            this.lbl_UserPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_UserPassword.Name = "lbl_UserPassword";
-            this.lbl_UserPassword.Size = new System.Drawing.Size(148, 39);
+            this.lbl_UserPassword.Size = new System.Drawing.Size(99, 25);
             this.lbl_UserPassword.TabIndex = 1;
             this.lbl_UserPassword.Text = "Password:";
             // 
             // txt_UserName
             // 
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(437, 152);
+            this.txt_UserName.Location = new System.Drawing.Point(291, 99);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.Size = new System.Drawing.Size(302, 35);
-            this.txt_UserName.TabIndex = 2;
+            this.txt_UserName.Size = new System.Drawing.Size(203, 26);
+            this.txt_UserName.TabIndex = 0;
             // 
             // txt_UserPassword
             // 
             this.txt_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserPassword.Location = new System.Drawing.Point(437, 309);
+            this.txt_UserPassword.Location = new System.Drawing.Point(291, 156);
+            this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_UserPassword.Name = "txt_UserPassword";
-            this.txt_UserPassword.Size = new System.Drawing.Size(302, 35);
-            this.txt_UserPassword.TabIndex = 2;
+            this.txt_UserPassword.Size = new System.Drawing.Size(203, 26);
+            this.txt_UserPassword.TabIndex = 1;
             // 
             // btn_CreateUser
             // 
             this.btn_CreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CreateUser.Location = new System.Drawing.Point(207, 511);
+            this.btn_CreateUser.Location = new System.Drawing.Point(138, 332);
+            this.btn_CreateUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_CreateUser.Name = "btn_CreateUser";
-            this.btn_CreateUser.Size = new System.Drawing.Size(219, 85);
-            this.btn_CreateUser.TabIndex = 0;
+            this.btn_CreateUser.Size = new System.Drawing.Size(146, 55);
+            this.btn_CreateUser.TabIndex = 3;
             this.btn_CreateUser.Text = "Create";
             this.btn_CreateUser.UseVisualStyleBackColor = true;
             this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(291, 215);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(203, 26);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(155, 217);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Email:";
+            // 
             // form_Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_UserPassword);
             this.Controls.Add(this.txt_UserName);
             this.Controls.Add(this.lbl_UserPassword);
             this.Controls.Add(this.lbl_UserName);
             this.Controls.Add(this.btn_CreateUser);
             this.Controls.Add(this.btn_RegistrationBack);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "form_Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_Registration";
@@ -119,5 +149,7 @@
         private System.Windows.Forms.TextBox txt_UserName;
         private System.Windows.Forms.TextBox txt_UserPassword;
         private System.Windows.Forms.Button btn_CreateUser;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label1;
     }
 }
