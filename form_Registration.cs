@@ -48,7 +48,7 @@ namespace Astect
                 if (isUserNameTaken == false)
                 {
                     string email = txtEmail.Text;
-                    Regex regex = new Regex(@"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*" + "@" + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$");
+                    Regex regex = new Regex((@"^[^@]+@[^@]+\.[^@]+$");
                     if (regex.IsMatch(email))
                     {
                         db.createNewUser(txt_UserName.Text, txt_UserPassword.Text, email);
