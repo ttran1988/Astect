@@ -99,13 +99,13 @@ namespace Astect
             dataGridView.DataSource = ds.Tables[0];
         }
 
-        public void createNewUser(String username, String password)
+        public void createNewUser(String username, String password, String email)
         {
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Users (UserName, Pword) VALUES ('"+username+"','"+password+"')";
+                    string query = "INSERT INTO Users (UserName, Pword, Email) VALUES ('"+username+"','"+password+"','"+email+"')";
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                     sqlConnect.Open();
                     sqlCommand.ExecuteNonQuery();
