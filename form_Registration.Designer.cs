@@ -42,7 +42,7 @@
             // 
             this.btn_RegistrationBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RegistrationBack.Location = new System.Drawing.Point(545, 332);
-            this.btn_RegistrationBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_RegistrationBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_RegistrationBack.Name = "btn_RegistrationBack";
             this.btn_RegistrationBack.Size = new System.Drawing.Size(146, 55);
             this.btn_RegistrationBack.TabIndex = 4;
@@ -74,7 +74,7 @@
             // 
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_UserName.Location = new System.Drawing.Point(291, 99);
-            this.txt_UserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.Size = new System.Drawing.Size(203, 26);
             this.txt_UserName.TabIndex = 0;
@@ -83,8 +83,9 @@
             // 
             this.txt_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_UserPassword.Location = new System.Drawing.Point(291, 156);
-            this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserPassword.Name = "txt_UserPassword";
+            this.txt_UserPassword.PasswordChar = '*';
             this.txt_UserPassword.Size = new System.Drawing.Size(203, 26);
             this.txt_UserPassword.TabIndex = 1;
             // 
@@ -92,7 +93,7 @@
             // 
             this.btn_CreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateUser.Location = new System.Drawing.Point(138, 332);
-            this.btn_CreateUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CreateUser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CreateUser.Name = "btn_CreateUser";
             this.btn_CreateUser.Size = new System.Drawing.Size(146, 55);
             this.btn_CreateUser.TabIndex = 3;
@@ -132,7 +133,7 @@
             this.Controls.Add(this.lbl_UserName);
             this.Controls.Add(this.btn_CreateUser);
             this.Controls.Add(this.btn_RegistrationBack);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "form_Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_Registration";

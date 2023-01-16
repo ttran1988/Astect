@@ -54,5 +54,13 @@ namespace Astect
             register.Visible = true;
             this.Hide();
         }
+
+        private void ll_Forgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            form_ForgotPW forgot = new form_ForgotPW();
+            forgot.USER_NAME = txt_UserName.Text;
+            forgot.Visible = true;
+            this.Hide();
+        }
     }
 }

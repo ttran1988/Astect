@@ -69,7 +69,33 @@ namespace Astect
             }
             return getUserID;
         }
+        public string getUserEmail(string username)
+        {
+            //RETURN VALUES
+            // '' = invalid username
+            // N/A = no email on file
+            // {email_addr} = good
 
+            string getUserEmail = "";
+            SqlDataReader dataReader;
+            sqlConnect = new SqlConnection(connectionString);
+            sqlConnect.Open();
+            string query = "select ISNULL(Email,'N/A') as Email from Users WHERE UserName = '" + username + "'";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+            dataReader = sqlCommand.ExecuteReader();
+            while (dataReader.Read())
+            {
+                try
+                {
+                    getUserEmail = getUserEmail + dataReader.GetValue(0).ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return getUserEmail;
+        }
         public void getUserHomeTable(DataGridView dgv)
         {
             int userID = Convert.ToInt32(form_LogIn.globalUserID);

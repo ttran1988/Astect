@@ -52,6 +52,12 @@
       <DependentUpon>AstectDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="form_ForgotPW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_ForgotPW.Designer.cs">
+      <DependentUpon>form_ForgotPW.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_Homes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form_ForgotPW.resx">
+      <DependentUpon>form_ForgotPW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form_Homes.resx">
       <DependentUpon>form_Homes.cs</DependentUpon>
     </EmbeddedResource>
