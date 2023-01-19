@@ -14,6 +14,7 @@ namespace Astect
     {
         public string USER_NAME { get; set; }
         Database db = new Database();
+        Email email = new Email();
         public form_ForgotPW()
         {
             InitializeComponent();
@@ -42,6 +43,13 @@ namespace Astect
                 default:
                     //results = {email_addr}
                     //TODO - Send the email recovery link
+                    email.sendPasswordResetCode(results);
+                    USER_NAME = txt_Username.Text;
+                    txt_code.Text = "";
+                    pnl_codeValidator.Location = new Point(47, 37);
+                    pnl_codeValidator.Size = new Size(643, 374);
+                    pnl_codeValidator.Visible = true;
+                    txt_code.Focus();
                     break;
             }
         }
@@ -56,6 +64,69 @@ namespace Astect
         private void form_ForgotPW_Load(object sender, EventArgs e)
         {
             txt_Username.Text = USER_NAME;
+        }
+
+        private void btn_codeBack_Click(object sender, EventArgs e)
+        {
+            pnl_codeValidator.Visible = false;
+        }
+
+        private void btn_codeSubmit_Click(object sender, EventArgs e)
+        {
+            lbl_codeError.Text = "";
+
+            string results = txt_code.Text;
+
+            switch (results)
+            {
+                case "":
+                    lbl_codeError.Text = "Please enter reset code";
+                    break;
+                case "N/A":
+                    lbl_codeError.Text = "Invalid code";
+                    break;
+                default:
+                    if (email.isPasswordResetCodeValid(txt_code.Text) == true)
+                    {
+                        pnl_resetPassword.Location = new Point(47, 37);
+                        pnl_resetPassword.Size = new Size(643, 374);
+                        pnl_resetPassword.Visible = true;
+                    }
+                    else
+                    {
+                        lbl_codeError.Text = "Invalid code";
+                    }
+                    break;
+            }
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            form_LogIn formLogIn = new form_LogIn();
+            formLogIn.Show();
+            this.Hide();
+        }
+
+        private void btn_newPasswordSubmit_Click(object sender, EventArgs e)
+        {
+            lbl_newPasswordError.Text = "";
+            
+            if (txt_enterPassword.Text == "" || txt_enterPasswordConfirm.Text == "")
+            {
+                lbl_newPasswordError.Text = "Please enter password in both fields";
+            }
+            else if (!txt_enterPassword.Text.Equals(txt_enterPasswordConfirm.Text))
+            {
+                lbl_newPasswordError.Text = "Please make sure password is enter correctly in both field";
+            }
+            else
+            {
+                db.updateUserPassword(USER_NAME, txt_enterPassword.Text);
+                MessageBox.Show("Your password has been updated, please log in with your new password");
+                form_LogIn formLogIn = new form_LogIn();
+                formLogIn.Show();
+                this.Hide();
+            }
         }
     }
 }
