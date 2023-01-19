@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.AxHost;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Astect
 {
@@ -208,6 +209,24 @@ namespace Astect
                 sqlConnect.Close();
             }
             return check;
+        }
+
+        public void updateUserPassword(string username, string password)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                {
+                    string query = "UPDATE Users SET Pword = '"+password+"' WHERE UserName = '"+username+"'";
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+                    sqlConnect.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
