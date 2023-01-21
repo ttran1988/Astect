@@ -36,7 +36,7 @@ namespace Astect
             {
                 foreach (String per in usernameList)
                 {
-                    if (String.Equals(txt_UserName.Text,per,StringComparison.OrdinalIgnoreCase))
+                    if (txt_UserName.Text == per)
                     {
                         isUserNameTaken = true;
                     }
@@ -66,7 +66,7 @@ namespace Astect
                 }
                 else
                 {
-                    MessageBox.Show("Username is taken, please enter another one");
+                    MessageBox.Show("Username is taken");
                 }
             }
             else
