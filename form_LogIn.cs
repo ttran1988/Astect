@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Astect
 {
@@ -39,16 +38,8 @@ namespace Astect
 
             try
             {
-                if (db.checkUserLogin(userName,userPassword) == true ) {
-                    form_LogIn.globalUserName = userName;
-                    form_Homes homes = new form_Homes();
-                    form_LogIn.globalUserID = db.getUserID(form_LogIn.globalUserName);
-                    homes.Show();
+                if (db.getUserTable(userName,userPassword) == true ) {
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login Details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
