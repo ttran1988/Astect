@@ -186,37 +186,35 @@ namespace Astect
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
+                string query = "SELECT * FROM Users WHERE username = '" + username + "'";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+                sqlConnect.Open();
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                
+                while (reader.Read())
                 {
-                    string query = "SELECT * FROM Users WHERE username = '" + username + "'";
-                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
-                    sqlConnect.Open();
-                    SqlDataReader reader = sqlCommand.ExecuteReader();
-
-
-                    while (reader.Read())
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
+                        string passHash = reader.GetString(2);
+                        string salt = reader.GetString(4);
+
+                        byte[] passSalt = Encoding.UTF8.GetBytes(password + salt);
+                        SHA256Managed sham = new SHA256Managed();
+                        byte[] hash = sham.ComputeHash(passSalt);
+
+                        if (Convert.ToBase64String(hash) == passHash)
                         {
-                            string passHash = reader.GetString(2);
-                            string salt = reader.GetString(4);
-
-                            byte[] passSalt = Encoding.UTF8.GetBytes(password + salt);
-                            SHA256Managed sham = new SHA256Managed();
-                            byte[] hash = sham.ComputeHash(passSalt);
-
-                            if (Convert.ToBase64String(hash) == passHash)
-                            {
-                                login = true;
-                            }
+                            login = true;
                         }
                     }
                 }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            return login;
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show(e.Message);
+        }
+        return login;
         }
 
 
