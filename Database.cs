@@ -11,6 +11,7 @@ using static System.Windows.Forms.AxHost;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Security.Cryptography;
 
 namespace Astect
 {
@@ -128,11 +129,18 @@ namespace Astect
 
         public void createNewUser(String username, String password, String email)
         {
+            Random random = new Random();
+            int salt = random.Next();
+
+            byte[] passSalt = Encoding.UTF8.GetBytes(password + salt);
+            SHA256Managed sham = new SHA256Managed();
+            byte[] hash = sham.ComputeHash(passSalt);
+
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Users (UserName, Pword, Email) VALUES ('"+username+"','"+password+"','"+email+"')";
+                    string query = "INSERT INTO Users (UserName, Pword, Email, Salt) VALUES ('" + username + "','" + Convert.ToBase64String(hash) + "','" + email + "','" + salt + "')";
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                     sqlConnect.Open();
                     sqlCommand.ExecuteNonQuery();
@@ -147,7 +155,6 @@ namespace Astect
         public List<String> getUserNames()
         {
             List<String> usernamesList = new List<String>();
-
 
             try
             {
@@ -173,51 +180,58 @@ namespace Astect
             return usernamesList;
         }
 
-        public bool getUserTable(string username, string password)
+        public bool checkUserLogin(string username, string password)
         {
-            bool check = false;
-
-            sqlConnect = new SqlConnection(connectionString);
-            sqlConnect.Open();
-
+            bool login = false;
             try
             {
-                string query = $"Execute GetUserTable @Name = {username}, @PW = {password};";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sqlConnect);
-                DataTable dtable = new DataTable();
-                sda.Fill(dtable);
+                using (sqlConnect = new SqlConnection(connectionString))
+                string query = "SELECT * FROM Users WHERE username = '" + username + "'";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+                sqlConnect.Open();
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    if (reader.HasRows)
+                    {
+                        string passHash = reader.GetString(2);
+                        string salt = reader.GetString(4);
 
-                if (dtable.Rows.Count > 0)
-                {
-                    form_LogIn.globalUserName = username;
-                    form_Homes homes = new form_Homes();
-                    form_LogIn.globalUserID = getUserID(form_LogIn.globalUserName);
-                    homes.Show();
-                    check = true;
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login Details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        byte[] passSalt = Encoding.UTF8.GetBytes(password + salt);
+                        SHA256Managed sham = new SHA256Managed();
+                        byte[] hash = sham.ComputeHash(passSalt);
+
+                        if (Convert.ToBase64String(hash) == passHash)
+                        {
+                            login = true;
+                        }
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sqlConnect.Close();
-            }
-            return check;
         }
+        catch (Exception e)
+        {
+            MessageBox.Show(e.Message);
+        }
+        return login;
+        }
+
 
         public void updateUserPassword(string username, string password)
         {
+            Random random = new Random();
+            int salt = random.Next();
+
+            byte[] passSalt = Encoding.UTF8.GetBytes(password + salt);
+            SHA256Managed sham = new SHA256Managed();
+            byte[] hash = sham.ComputeHash(passSalt);
+
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
                 {
-                    string query = "UPDATE Users SET Pword = '"+password+"' WHERE UserName = '"+username+"'";
+                    string query = "UPDATE Users SET Pword = '"+Convert.ToBase64String(hash)+"', Salt = '"+salt+"' WHERE UserName = '"+username+"'";
                     SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                     sqlConnect.Open();
                     sqlCommand.ExecuteNonQuery();
