@@ -182,7 +182,7 @@ namespace Astect
 
             try
             {
-                string query = "SELECT * FROM Users WHERE username = '" + username + "' AND Pword = '" + password + "';";
+                string query = $"Execute GetUserTable @Name = {username}, @PW = {password};";
                 SqlDataAdapter sda = new SqlDataAdapter(query, sqlConnect);
                 DataTable dtable = new DataTable();
                 sda.Fill(dtable);
