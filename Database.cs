@@ -186,6 +186,7 @@ namespace Astect
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
+                {
                 string query = "SELECT * FROM Users WHERE username = '" + username + "'";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                 sqlConnect.Open();
