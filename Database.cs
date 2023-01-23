@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Security.Cryptography;
+using Microsoft.SqlServer.Server;
 
 namespace Astect
 {
@@ -101,16 +102,32 @@ namespace Astect
         public void getUserHomeTable(DataGridView dgv)
         {
             int userID = Convert.ToInt32(form_LogIn.globalUserID);
-            string query = "SELECT HomeID, HomeName, HomeAddress, HomeCity, HomeState, HomeZip FROM Homes WHERE UserID = '" + userID + "'";
+            //string query = "getUserHomeTable"; // "SELECT HomeID, HomeName, HomeAddress, HomeCity, HomeState, HomeZip FROM Homes WHERE UserID = '" + userID + "'";
             sqlConnect = new SqlConnection(this.connectionString);
             sqlConnect.Open();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, sqlConnect);
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+            SqlCommand sCmd = new SqlCommand();
+            sCmd.CommandType = CommandType.StoredProcedure;
+            sCmd.CommandText = "getUserHomeTable";
+            sCmd.Connection = sqlConnect;
+
+            SqlParameter sPrm;
+            sPrm = sCmd.Parameters.Add("@userId", SqlDbType.Int);
+            sPrm.Value = userID;
+            sPrm.Direction = ParameterDirection.Input;
+
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = sCmd;
+
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
+
             DataGridView dataGridView = dgv;
             dataGridView.DataSource = ds.Tables[0];
             dataGridView.Columns["HomeID"].Visible = false;
+
+            sqlConnect.Close();
+            sCmd.Dispose();
         }
 
         public void getHomeItemTable(DataGridView dgv)
@@ -140,9 +157,33 @@ namespace Astect
             {
                 using (sqlConnect = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Users (UserName, Pword, Email, Salt) VALUES ('" + username + "','" + Convert.ToBase64String(hash) + "','" + email + "','" + salt + "')";
-                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                     sqlConnect.Open();
+                    //string query = "INSERT INTO Users (UserName, Pword, Email, Salt) VALUES ('" + username + "','" + Convert.ToBase64String(hash) + "','" + email + "','" + salt + "')";
+                    SqlCommand sqlCommand = new SqlCommand(); // query, sqlConnect);
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandText = "insertUser";
+                    sqlCommand.Connection = sqlConnect;
+
+                    SqlParameter sPrm;
+                    sPrm = sqlCommand.Parameters.Add("@userName", SqlDbType.VarChar, 50);
+                    sPrm.Value = username;
+                    sPrm.Direction = ParameterDirection.Input;
+
+                    SqlParameter sPrm2;
+                    sPrm2 = sqlCommand.Parameters.Add("@pword", SqlDbType.VarChar, 50);
+                    sPrm2.Value = Convert.ToBase64String(hash);
+                    sPrm2.Direction = ParameterDirection.Input;
+
+                    SqlParameter sPrm3;
+                    sPrm3 = sqlCommand.Parameters.Add("@email", SqlDbType.VarChar);
+                    sPrm3.Value = email;
+                    sPrm3.Direction = ParameterDirection.Input;
+
+                    SqlParameter sPrm4;
+                    sPrm4 = sqlCommand.Parameters.Add("@salt", SqlDbType.VarChar, 25);
+                    sPrm4.Value = salt;
+                    sPrm4.Direction = ParameterDirection.Input;
+
                     sqlCommand.ExecuteNonQuery();
                 }
             }

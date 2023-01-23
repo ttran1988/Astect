@@ -30,7 +30,7 @@ namespace Astect
         {
             List<String> usernameList = new List<String>();
             usernameList = db.getUserNames();
-            Boolean isUserNameTaken = true;
+            Boolean isUserNameTaken = false;
 
             if (txt_UserName.Text != "" && txt_UserPassword.Text != "")
             {
@@ -40,10 +40,10 @@ namespace Astect
                     {
                         isUserNameTaken = true;
                     }
-                    else
-                    {
-                        isUserNameTaken = false;
-                    }
+                    //else
+                    //{
+                    //    isUserNameTaken = false;
+                    //}
                 }
                 if (isUserNameTaken == false)
                 {
