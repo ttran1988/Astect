@@ -36,19 +36,49 @@ namespace Astect
         }
         public void addHome(string name, string address, string city, string state, string zip, Int16 userId)
         {
-            sqlConnect = new SqlConnection(connectionString);
-            sqlConnect.Open();
-            string query = "insert into Homes (HomeName, HomeAddress, HomeCity, HomeState, HomeZip, UserID) values ('" + name + "','" + address + "','" + city + "','" + state + "','" + zip + "'," + userId.ToString() + ")";
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
-            sqlCommand.ExecuteNonQuery();
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "AddHome";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@HomeName", SqlDbType.VarChar).Value = name;
+                    cmd.Parameters.AddWithValue("@HomeAddress", SqlDbType.VarChar).Value = address;
+                    cmd.Parameters.AddWithValue("@HomeCity", SqlDbType.VarChar).Value = city;
+                    cmd.Parameters.AddWithValue("@HomeState", SqlDbType.Char).Value = state;
+                    cmd.Parameters.AddWithValue("@HomeZip", SqlDbType.VarChar).Value = zip;
+                    cmd.Parameters.AddWithValue("@UserID", SqlDbType.Int).Value = userId;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
         public void addItem(string item, string description, string price, Int16 homeId)
         {
-            sqlConnect = new SqlConnection(connectionString);
-            sqlConnect.Open();
-            string query = "insert into Items (ItemName, ItemDescription, ItemPrice, HomeID) values ('" + item + "','" + description + "','" + price + "'," + homeId.ToString() + ")";
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
-            sqlCommand.ExecuteNonQuery();
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "AddItem";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ItemName", SqlDbType.VarChar).Value = item;
+                    cmd.Parameters.AddWithValue("@ItemDescription", SqlDbType.VarChar).Value = description;
+                    cmd.Parameters.AddWithValue("@ItemPrice", SqlDbType.Money).Value = price;
+                    cmd.Parameters.AddWithValue("@HomeID", SqlDbType.Int).Value = homeId;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
          public string getUserID(string username)
         {
@@ -65,9 +95,9 @@ namespace Astect
                 {
                     getUserID = getUserID + dataReader.GetValue(0) + "\n";
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(e.Message);
                 }
             }
             return getUserID;
@@ -102,32 +132,35 @@ namespace Astect
         public void getUserHomeTable(DataGridView dgv)
         {
             int userID = Convert.ToInt32(form_LogIn.globalUserID);
-            //string query = "getUserHomeTable"; // "SELECT HomeID, HomeName, HomeAddress, HomeCity, HomeState, HomeZip FROM Homes WHERE UserID = '" + userID + "'";
-            sqlConnect = new SqlConnection(this.connectionString);
-            sqlConnect.Open();
+            try
+            {
+                using (sqlConnect = new SqlConnection(this.connectionString))
+                using (SqlCommand sCmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    sCmd.CommandText = "getUserHomeTable";
+                    sCmd.CommandType = CommandType.StoredProcedure;
 
-            SqlCommand sCmd = new SqlCommand();
-            sCmd.CommandType = CommandType.StoredProcedure;
-            sCmd.CommandText = "getUserHomeTable";
-            sCmd.Connection = sqlConnect;
+                    SqlParameter sPrm;
+                    sPrm = sCmd.Parameters.Add("@userId", SqlDbType.Int);
+                    sPrm.Value = userID;
+                    sPrm.Direction = ParameterDirection.Input;
 
-            SqlParameter sPrm;
-            sPrm = sCmd.Parameters.Add("@userId", SqlDbType.Int);
-            sPrm.Value = userID;
-            sPrm.Direction = ParameterDirection.Input;
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                    dataAdapter.SelectCommand = sCmd;
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            dataAdapter.SelectCommand = sCmd;
+                    DataTable dt = new DataTable();
+                    dataAdapter.Fill(dt);
 
-            DataSet ds = new DataSet();
-            dataAdapter.Fill(ds);
-
-            DataGridView dataGridView = dgv;
-            dataGridView.DataSource = ds.Tables[0];
-            dataGridView.Columns["HomeID"].Visible = false;
-
-            sqlConnect.Close();
-            sCmd.Dispose();
+                    DataGridView dataGridView = dgv;
+                    dataGridView.DataSource = dt;
+                    dataGridView.Columns["HomeID"].Visible = false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         public void getHomeItemTable(DataGridView dgv)
@@ -156,13 +189,11 @@ namespace Astect
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand sqlCommand = sqlConnect.CreateCommand())
                 {
                     sqlConnect.Open();
-                    //string query = "INSERT INTO Users (UserName, Pword, Email, Salt) VALUES ('" + username + "','" + Convert.ToBase64String(hash) + "','" + email + "','" + salt + "')";
-                    SqlCommand sqlCommand = new SqlCommand(); // query, sqlConnect);
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.CommandText = "insertUser";
-                    sqlCommand.Connection = sqlConnect;
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
 
                     SqlParameter sPrm;
                     sPrm = sqlCommand.Parameters.Add("@userName", SqlDbType.VarChar, 50);
@@ -227,11 +258,13 @@ namespace Astect
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
                 {
-                string query = "SELECT * FROM Users WHERE username = '" + username + "'";
-                SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                 sqlConnect.Open();
-                SqlDataReader reader = sqlCommand.ExecuteReader();
+                cmd.CommandText = "CheckUserLogin";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserName", SqlDbType.VarChar).Value = username;
+                SqlDataReader reader = cmd.ExecuteReader();
                 
                 while (reader.Read())
                 {
@@ -272,11 +305,15 @@ namespace Astect
             try
             {
                 using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
                 {
-                    string query = "UPDATE Users SET Pword = '"+Convert.ToBase64String(hash)+"', Salt = '"+salt+"' WHERE UserName = '"+username+"'";
-                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
                     sqlConnect.Open();
-                    sqlCommand.ExecuteNonQuery();
+                    cmd.CommandText = "UpdateUserPassword";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Password", SqlDbType.VarChar).Value = Convert.ToBase64String(hash);
+                    cmd.Parameters.AddWithValue("@Salt", SqlDbType.VarChar).Value = salt;
+                    cmd.Parameters.AddWithValue("@UserName", SqlDbType.VarChar).Value = username;
+                    cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception e)
