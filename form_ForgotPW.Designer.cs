@@ -125,10 +125,11 @@
             this.pnl_codeValidator.Controls.Add(this.btn_codeBack);
             this.pnl_codeValidator.Controls.Add(this.txt_code);
             this.pnl_codeValidator.Controls.Add(this.lbl_code);
-            this.pnl_codeValidator.Location = new System.Drawing.Point(53, 54);
+            this.pnl_codeValidator.Location = new System.Drawing.Point(75, 502);
             this.pnl_codeValidator.Name = "pnl_codeValidator";
-            this.pnl_codeValidator.Size = new System.Drawing.Size(140, 82);
+            this.pnl_codeValidator.Size = new System.Drawing.Size(154, 99);
             this.pnl_codeValidator.TabIndex = 6;
+            this.pnl_codeValidator.Visible = false;
             // 
             // lbl_codeError
             // 
@@ -187,10 +188,11 @@
             this.pnl_resetPassword.Controls.Add(this.txt_enterPassword);
             this.pnl_resetPassword.Controls.Add(this.lbl_enterPasswordConfirm);
             this.pnl_resetPassword.Controls.Add(this.lbl_enterPassword);
-            this.pnl_resetPassword.Location = new System.Drawing.Point(41, 188);
+            this.pnl_resetPassword.Location = new System.Drawing.Point(778, 495);
             this.pnl_resetPassword.Name = "pnl_resetPassword";
             this.pnl_resetPassword.Size = new System.Drawing.Size(121, 104);
             this.pnl_resetPassword.TabIndex = 7;
+            this.pnl_resetPassword.Visible = false;
             // 
             // lbl_newPasswordError
             // 
