@@ -58,6 +58,31 @@ namespace Astect
                 MessageBox.Show(e.Message);
             }
         }
+
+        public void updateHome(string name, string address, string city, string state, string zip, Int16 homeId)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "UpdateHome";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@HomeName", SqlDbType.VarChar).Value = name;
+                    cmd.Parameters.AddWithValue("@HomeAddress", SqlDbType.VarChar).Value = address;
+                    cmd.Parameters.AddWithValue("@HomeCity", SqlDbType.VarChar).Value = city;
+                    cmd.Parameters.AddWithValue("@HomeState", SqlDbType.Char).Value = state;
+                    cmd.Parameters.AddWithValue("@HomeZip", SqlDbType.VarChar).Value = zip;
+                    cmd.Parameters.AddWithValue("@HomeID", SqlDbType.Int).Value = homeId;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
         public void addItem(string item, string description, string price, Int16 homeId)
         {
             try
@@ -80,6 +105,7 @@ namespace Astect
                 MessageBox.Show(e.Message);
             }
         }
+
          public string getUserID(string username)
         {
             string getUserID = "";

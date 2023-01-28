@@ -20,6 +20,7 @@ namespace Astect
 
         public static string globalHomeName = "";
         public static string globalHomeID = "";
+        public static string globalCurrentHomeRowID = "";
         Database db = new Database();
 
         private void btn_HomeBack_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace Astect
 
             pnl_AddHome.Location = new Point(47, 37);
             pnl_AddHome.Size = new Size(643, 374);
+            btn_HomeSave.Visible = true;
             pnl_AddHome.Visible = true;
             txt_HomeName.Focus();
         }
@@ -67,16 +69,50 @@ namespace Astect
 
         private void btn_HomeSave_Click(object sender, EventArgs e)
         {
-            db.addHome(txt_HomeName.Text, txt_HomeAddress.Text, txt_HomeCity.Text, txt_HomeState.Text, txt_HomeZIP.Text, Convert.ToInt16(form_LogIn.globalUserID));
-
-            db.getUserHomeTable(dataGridViewHome);
-
-            pnl_AddHome.Visible = false;
+            if (txt_HomeName.Text != "")
+            {
+                db.addHome(txt_HomeName.Text, txt_HomeAddress.Text, txt_HomeCity.Text, txt_HomeState.Text, txt_HomeZIP.Text, Convert.ToInt16(form_LogIn.globalUserID));
+                db.getUserHomeTable(dataGridViewHome);
+                pnl_AddHome.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Please enter home name");
+            }
+ 
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        private void btn_HomeEdit_Click(object sender, EventArgs e)
         {
+            int selectRowIndex = dataGridViewHome.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridViewHome.Rows[selectRowIndex];
 
+            globalCurrentHomeRowID = Convert.ToString(selectedRow.Cells["HomeID"].Value);
+            txt_HomeName.Text = Convert.ToString(selectedRow.Cells["HomeName"].Value);
+            txt_HomeAddress.Text = Convert.ToString(selectedRow.Cells["HomeAddress"].Value);
+            txt_HomeCity.Text = Convert.ToString(selectedRow.Cells["HomeCity"].Value);
+            txt_HomeState.Text = Convert.ToString(selectedRow.Cells["HomeState"].Value);
+            txt_HomeZIP.Text = Convert.ToString(selectedRow.Cells["HomeZip"].Value);
+
+            pnl_AddHome.Location = new Point(47, 37);
+            pnl_AddHome.Size = new Size(643, 374);
+            btn_HomeUpdate.Visible = true;
+            pnl_AddHome.Visible = true;
+            txt_HomeName.Focus();
+        }
+
+        private void btn_HomeUpdate_Click(object sender, EventArgs e)
+        {
+            if (txt_HomeName.Text != "")
+            {
+                db.updateHome(txt_HomeName.Text, txt_HomeAddress.Text, txt_HomeCity.Text, txt_HomeState.Text, txt_HomeZIP.Text, Convert.ToInt16(form_Homes.globalCurrentHomeRowID));
+                db.getUserHomeTable(dataGridViewHome);
+                pnl_AddHome.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Please enter home name");
+            }
         }
     }
 }
