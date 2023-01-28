@@ -49,6 +49,7 @@
             this.lbl_HomeName = new System.Windows.Forms.Label();
             this.btn_HomeEdit = new System.Windows.Forms.Button();
             this.btn_HomeUpdate = new System.Windows.Forms.Button();
+            this.btn_HomeDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             this.pnl_AddHome.SuspendLayout();
             this.SuspendLayout();
@@ -296,11 +297,23 @@
             this.btn_HomeUpdate.Visible = false;
             this.btn_HomeUpdate.Click += new System.EventHandler(this.btn_HomeUpdate_Click);
             // 
+            // btn_HomeDelete
+            // 
+            this.btn_HomeDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HomeDelete.Location = new System.Drawing.Point(912, 80);
+            this.btn_HomeDelete.Name = "btn_HomeDelete";
+            this.btn_HomeDelete.Size = new System.Drawing.Size(100, 40);
+            this.btn_HomeDelete.TabIndex = 7;
+            this.btn_HomeDelete.Text = "Delete";
+            this.btn_HomeDelete.UseVisualStyleBackColor = true;
+            this.btn_HomeDelete.Click += new System.EventHandler(this.btn_HomeDelete_Click);
+            // 
             // form_Homes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 675);
+            this.Controls.Add(this.btn_HomeDelete);
             this.Controls.Add(this.pnl_AddHome);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.dataGridViewHome);
@@ -344,5 +357,6 @@
         private System.Windows.Forms.Label lbl_HomeAddress;
         private System.Windows.Forms.Button btn_HomeEdit;
         private System.Windows.Forms.Button btn_HomeUpdate;
+        private System.Windows.Forms.Button btn_HomeDelete;
     }
 }

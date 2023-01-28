@@ -59,7 +59,7 @@ namespace Astect
             }
         }
 
-        public void updateHome(string name, string address, string city, string state, string zip, Int16 homeId)
+        public void updateHome(string name, string address, string city, string state, string zip, int homeId)
         {
             try
             {
@@ -83,7 +83,26 @@ namespace Astect
                 MessageBox.Show(e.Message);
             }
         }
-        public void addItem(string item, string description, string price, Int16 homeId)
+
+        public void deleteHome(int homeId)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                {
+                    string query = "Delete FROM Items WHERE HomeID = '"+homeId+"'; Delete FROM Homes WHERE HomeId = '" + homeId + "'";
+                    sqlConnect.Open();
+                    SqlCommand cmd = new SqlCommand(query, sqlConnect);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public void addItem(string item, string description, string price, int homeId)
         {
             try
             {
