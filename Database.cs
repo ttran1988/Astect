@@ -13,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Security.Cryptography;
 using Microsoft.SqlServer.Server;
+using System.ComponentModel;
 
 namespace Astect
 {
@@ -50,6 +51,45 @@ namespace Astect
                     cmd.Parameters.AddWithValue("@HomeState", SqlDbType.Char).Value = state;
                     cmd.Parameters.AddWithValue("@HomeZip", SqlDbType.VarChar).Value = zip;
                     cmd.Parameters.AddWithValue("@UserID", SqlDbType.Int).Value = userId;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public void deleteItem(int itemID)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "DeleteItem";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ItemID", SqlDbType.Int).Value = itemID;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public void deleteAllItems()
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "resetItems";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -102,7 +142,7 @@ namespace Astect
             }
         }
 
-        public void addItem(string item, string description, string price, int homeId)
+        public void addItem(string item, string description, string price, int homeId, string modelNbr, string serialnbr)
         {
             try
             {
@@ -116,6 +156,33 @@ namespace Astect
                     cmd.Parameters.AddWithValue("@ItemDescription", SqlDbType.VarChar).Value = description;
                     cmd.Parameters.AddWithValue("@ItemPrice", SqlDbType.Money).Value = price;
                     cmd.Parameters.AddWithValue("@HomeID", SqlDbType.Int).Value = homeId;
+                    cmd.Parameters.AddWithValue("@Model", SqlDbType.VarChar).Value = modelNbr;
+                    cmd.Parameters.AddWithValue("@Serial", SqlDbType.VarChar).Value = serialnbr;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+       
+        public void updateItem(string item, string description, string price, string modelNbr, string serialNbr, int itemID)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "UpdateItem";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ItemName", SqlDbType.VarChar).Value = item;
+                    cmd.Parameters.AddWithValue("@ItemDescription", SqlDbType.VarChar).Value = description;
+                    cmd.Parameters.AddWithValue("@ItemPrice", SqlDbType.Money).Value = price;
+                    cmd.Parameters.AddWithValue("@ItemModel", SqlDbType.VarChar).Value = modelNbr;
+                    cmd.Parameters.AddWithValue("@ItemSerial", SqlDbType.VarChar).Value = serialNbr;
+                    cmd.Parameters.AddWithValue("@ItemID", SqlDbType.Int).Value = itemID;
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -211,7 +278,7 @@ namespace Astect
         public void getHomeItemTable(DataGridView dgv)
         {
             int homeID = Convert.ToInt32(form_Homes.globalHomeID);
-            string query = "SELECT ItemName, ItemDescription, ItemPrice FROM Items WHERE HomeID = '" + homeID + "'";
+            string query = "SELECT ItemID, ItemName, ItemDescription, CAST(ItemPrice as Numeric(17,2)) ItemPrice, ItemModel, ItemSerialNumber FROM Items WHERE HomeID = '" + homeID + "'";
             sqlConnect = new SqlConnection(this.connectionString);
             sqlConnect.Open();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, sqlConnect);
@@ -220,6 +287,7 @@ namespace Astect
             dataAdapter.Fill(ds);
             DataGridView dataGridView = dgv;
             dataGridView.DataSource = ds.Tables[0];
+            dataGridView.Columns["ItemID"].Visible = false;
         }
 
         public void createNewUser(String username, String password, String email)

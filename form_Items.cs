@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Data.Sql;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Astect
 {
     public partial class form_Items : Form
     {
+        public static int globalCurrentItemRowID;
         public form_Items()
         {
             InitializeComponent();
@@ -38,8 +40,19 @@ namespace Astect
             txt_itemName.Text = "";
             txt_itemDesc.Text = "";
             txt_itemPrice.Text = "";
+            txtModel.Text = "";
+            txtSerial.Text = "";
+
+            btnEdit.Visible = false;
+            btnEdit.Enabled = false;
+            pnl_EditItem.Visible = false;
+            pnl_EditItem.Size = new Size(46, 20);
+            btnDelete.Visible = false;
+            btnDelete.Enabled = false;
+            btnDeleteAll.Visible = false;
+            btnDeleteAll.Enabled = false;
  
-            pnl_addItem.Location = new Point(16, 96);
+            pnl_addItem.Location = new Point(16, 100);
             pnl_addItem.Size = new Size(776, 384);
             pnl_addItem.Visible = true;
             txt_itemName.Focus();
@@ -48,13 +61,106 @@ namespace Astect
         private void btn_CancelItem_Click(object sender, EventArgs e)
         {
             pnl_addItem.Visible = false;
+            pnl_addItem.Size = new Size(46, 20);
+            btnDelete.Visible = true;
+            btnDelete.Enabled = true;
+            btnEdit.Visible = true;
+            btnEdit.Enabled = true;
         }
 
         private void btn_ItemSave_Click(object sender, EventArgs e)
         {
-            db.addItem(txt_itemName.Text, txt_itemDesc.Text, txt_itemPrice.Text, Convert.ToInt16(form_Homes.globalHomeID));
+            db.addItem(txt_itemName.Text, txt_itemDesc.Text, txt_itemPrice.Text, Convert.ToInt16(form_Homes.globalHomeID), txtModel.Text, txtSerial.Text);
             db.getHomeItemTable(dataGridViewItems);
+            pnl_addItem.Size = new Size(46, 20);
             pnl_addItem.Visible = false;
+            btnEdit.Visible = true;
+            btnEdit.Enabled = true;
+            btnDelete.Visible = true;
+            btnDelete.Enabled = true;
+            btnDeleteAll.Visible = true;
+            btnDeleteAll.Enabled = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btn_AddItem.Visible = false;
+            btn_AddItem.Enabled = false;
+            btnDelete.Visible = false;
+            btnDelete.Enabled = false;
+            btnDeleteAll.Visible = false;
+            btnDeleteAll.Enabled = false;
+            int selectRowIndex = dataGridViewItems.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedItemRow = dataGridViewItems.Rows[selectRowIndex];
+
+            txtEditItemName.Text = selectedItemRow.Cells["ItemName"].Value.ToString();
+            txtEditItemDesc.Text = selectedItemRow.Cells["ItemDescription"].Value.ToString();
+            txtEditItemPrice.Text = selectedItemRow.Cells["ItemPrice"].Value.ToString();
+            globalCurrentItemRowID = Convert.ToInt32(selectedItemRow.Cells["ItemID"].Value.ToString());
+            txtEditModelNbr.Text = selectedItemRow.Cells["ItemModel"].Value.ToString();
+            txtEditSerialNbr.Text = selectedItemRow.Cells["ItemSerialNumber"].Value.ToString();
+            pnl_EditItem.Location = new Point(16, 100);
+            pnl_EditItem.Size = new Size(776, 384);
+            pnl_EditItem.Visible = true;
+            txtEditItemName.Focus();
+
+        }
+
+        private void btnEditSave_Click(object sender, EventArgs e)
+        {
+            db.updateItem(txtEditItemName.Text, txtEditItemDesc.Text, txtEditItemPrice.Text, txtEditModelNbr.Text, txtEditSerialNbr.Text,
+                globalCurrentItemRowID);
+            db.getHomeItemTable(dataGridViewItems);
+            pnl_EditItem.Size = new Size(46, 20);
+            pnl_EditItem.Visible = false;
+            btn_AddItem.Visible = true;
+            btn_AddItem.Enabled = true;
+            btnDelete.Visible = true;
+            btnDelete.Enabled = true;
+            btnDeleteAll.Visible = true;
+            btnDeleteAll.Enabled = true;
+        }
+
+        private void btnEditCancel_Click(object sender, EventArgs e)
+        {
+            pnl_EditItem.Visible = false;
+            pnl_EditItem.Size = new Size(46, 20);
+            btnDelete.Visible = true;
+            btnDelete.Enabled = true;
+            btn_AddItem.Visible = true;
+            btn_AddItem.Enabled = true;
+            btnDeleteAll.Visible = true;
+            btnDeleteAll.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int selectRowIndex = dataGridViewItems.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedItemRow = dataGridViewItems.Rows[selectRowIndex];
+
+            globalCurrentItemRowID = Convert.ToInt32(selectedItemRow.Cells["ItemID"].Value);
+            Console.WriteLine(globalCurrentItemRowID);
+
+            DialogResult answer = MessageBox.Show($"Are you sure you want to delete this item?\n\n " +
+                $"{selectedItemRow.Cells["ItemName"].Value.ToString()}\n\n", $"Delete {selectedItemRow.Cells["ItemName"].Value.ToString()}", 
+                MessageBoxButtons.YesNo); 
+
+            if(answer == DialogResult.Yes)
+            {
+                db.deleteItem(globalCurrentItemRowID);
+                db.getHomeItemTable(dataGridViewItems);
+            }
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show($"Are you sure you want to delete all items?", "Delete All?", MessageBoxButtons.YesNo);
+
+            if (answer == DialogResult.Yes)
+            {
+                db.deleteAllItems();
+                db.getHomeItemTable(dataGridViewItems);
+            }
         }
     }
 }
