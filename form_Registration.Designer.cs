@@ -40,86 +40,85 @@
             // 
             // btn_RegistrationBack
             // 
-            this.btn_RegistrationBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RegistrationBack.Location = new System.Drawing.Point(545, 332);
+            this.btn_RegistrationBack.BackColor = System.Drawing.Color.Tomato;
+            this.btn_RegistrationBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RegistrationBack.Location = new System.Drawing.Point(11, 384);
             this.btn_RegistrationBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_RegistrationBack.Name = "btn_RegistrationBack";
             this.btn_RegistrationBack.Size = new System.Drawing.Size(146, 55);
             this.btn_RegistrationBack.TabIndex = 4;
             this.btn_RegistrationBack.Text = "Back";
-            this.btn_RegistrationBack.UseVisualStyleBackColor = true;
+            this.btn_RegistrationBack.UseVisualStyleBackColor = false;
             this.btn_RegistrationBack.Click += new System.EventHandler(this.btn_RegistrationBack_Click);
             // 
             // lbl_UserName
             // 
-            this.lbl_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserName.Location = new System.Drawing.Point(155, 96);
+            this.lbl_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_UserName.Location = new System.Drawing.Point(267, 75);
             this.lbl_UserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_UserName.Name = "lbl_UserName";
-            this.lbl_UserName.Size = new System.Drawing.Size(99, 25);
+            this.lbl_UserName.Size = new System.Drawing.Size(116, 25);
             this.lbl_UserName.TabIndex = 1;
             this.lbl_UserName.Text = "Username:";
             // 
             // lbl_UserPassword
             // 
-            this.lbl_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserPassword.Location = new System.Drawing.Point(155, 158);
+            this.lbl_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_UserPassword.Location = new System.Drawing.Point(267, 149);
             this.lbl_UserPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_UserPassword.Name = "lbl_UserPassword";
-            this.lbl_UserPassword.Size = new System.Drawing.Size(99, 25);
+            this.lbl_UserPassword.Size = new System.Drawing.Size(116, 25);
             this.lbl_UserPassword.TabIndex = 1;
             this.lbl_UserPassword.Text = "Password:";
             // 
             // txt_UserName
             // 
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(291, 99);
+            this.txt_UserName.Location = new System.Drawing.Point(271, 102);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.Size = new System.Drawing.Size(203, 26);
+            this.txt_UserName.Size = new System.Drawing.Size(242, 26);
             this.txt_UserName.TabIndex = 0;
             // 
             // txt_UserPassword
             // 
             this.txt_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserPassword.Location = new System.Drawing.Point(291, 156);
+            this.txt_UserPassword.Location = new System.Drawing.Point(271, 176);
             this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserPassword.Name = "txt_UserPassword";
             this.txt_UserPassword.PasswordChar = '*';
-            
-            this.txt_UserPassword.Size = new System.Drawing.Size(302, 35);
-            this.txt_UserPassword.TabIndex = 2;
-            this.txt_UserPassword.Size = new System.Drawing.Size(203, 26);
+            this.txt_UserPassword.Size = new System.Drawing.Size(242, 26);
             this.txt_UserPassword.TabIndex = 1;
             // 
             // btn_CreateUser
             // 
-            this.btn_CreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CreateUser.Location = new System.Drawing.Point(138, 332);
+            this.btn_CreateUser.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_CreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateUser.Location = new System.Drawing.Point(323, 304);
             this.btn_CreateUser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CreateUser.Name = "btn_CreateUser";
             this.btn_CreateUser.Size = new System.Drawing.Size(146, 55);
             this.btn_CreateUser.TabIndex = 3;
             this.btn_CreateUser.Text = "Create";
-            this.btn_CreateUser.UseVisualStyleBackColor = true;
+            this.btn_CreateUser.UseVisualStyleBackColor = false;
             this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(291, 215);
+            this.txtEmail.Location = new System.Drawing.Point(271, 254);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(203, 26);
+            this.txtEmail.Size = new System.Drawing.Size(242, 26);
             this.txtEmail.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(155, 217);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(267, 227);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.Size = new System.Drawing.Size(112, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Email:";
             // 
@@ -127,6 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label1);
