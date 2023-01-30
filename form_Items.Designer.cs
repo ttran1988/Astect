@@ -73,78 +73,72 @@
             // 
             // lbl_Home
             // 
-            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Home.Location = new System.Drawing.Point(94, 218);
+            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.Location = new System.Drawing.Point(12, 9);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(257, 46);
+            this.lbl_Home.Size = new System.Drawing.Size(146, 32);
             this.lbl_Home.TabIndex = 0;
             this.lbl_Home.Text = "Current Home:";
-            this.lbl_Home.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Back
             // 
-            this.btn_Back.BackColor = System.Drawing.Color.Tomato;
-            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Back.Location = new System.Drawing.Point(12, 377);
+            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(551, 367);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(161, 61);
             this.btn_Back.TabIndex = 1;
             this.btn_Back.Text = "Back";
-            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // dataGridViewItems
             // 
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItems.Location = new System.Drawing.Point(418, 96);
+            this.dataGridViewItems.Location = new System.Drawing.Point(84, 107);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersWidth = 62;
             this.dataGridViewItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewItems.Size = new System.Drawing.Size(370, 242);
+            this.dataGridViewItems.Size = new System.Drawing.Size(628, 242);
             this.dataGridViewItems.TabIndex = 2;
             // 
             // lbl_UserName
             // 
             this.lbl_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserName.Location = new System.Drawing.Point(94, 170);
+            this.lbl_UserName.Location = new System.Drawing.Point(164, 41);
             this.lbl_UserName.Name = "lbl_UserName";
-            this.lbl_UserName.Size = new System.Drawing.Size(257, 32);
+            this.lbl_UserName.Size = new System.Drawing.Size(70, 32);
             this.lbl_UserName.TabIndex = 0;
             this.lbl_UserName.Text = "User:";
-            this.lbl_UserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_HomeName
             // 
             this.lbl_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeName.Location = new System.Drawing.Point(94, 264);
+            this.lbl_HomeName.Location = new System.Drawing.Point(164, 9);
             this.lbl_HomeName.Name = "lbl_HomeName";
-            this.lbl_HomeName.Size = new System.Drawing.Size(257, 32);
+            this.lbl_HomeName.Size = new System.Drawing.Size(139, 32);
             this.lbl_HomeName.TabIndex = 0;
             this.lbl_HomeName.Text = "Home Name";
-            this.lbl_HomeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_CurrentText
             // 
-            this.lbl_CurrentText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentText.Location = new System.Drawing.Point(94, 138);
+            this.lbl_CurrentText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentText.Location = new System.Drawing.Point(12, 41);
             this.lbl_CurrentText.Name = "lbl_CurrentText";
-            this.lbl_CurrentText.Size = new System.Drawing.Size(257, 32);
+            this.lbl_CurrentText.Size = new System.Drawing.Size(129, 32);
             this.lbl_CurrentText.TabIndex = 0;
             this.lbl_CurrentText.Text = "Current User:";
-            this.lbl_CurrentText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_AddItem
             // 
-            this.btn_AddItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddItem.Location = new System.Drawing.Point(418, 344);
+            this.btn_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_AddItem.Location = new System.Drawing.Point(84, 75);
             this.btn_AddItem.Name = "btn_AddItem";
-            this.btn_AddItem.Size = new System.Drawing.Size(144, 41);
+            this.btn_AddItem.Size = new System.Drawing.Size(55, 26);
             this.btn_AddItem.TabIndex = 5;
-            this.btn_AddItem.Text = "Add Item";
+            this.btn_AddItem.Text = "New";
             this.toolTip1.SetToolTip(this.btn_AddItem, "Add Item");
-            this.btn_AddItem.UseVisualStyleBackColor = false;
+            this.btn_AddItem.UseVisualStyleBackColor = true;
             this.btn_AddItem.Click += new System.EventHandler(this.btn_AddItem_Click);
             // 
             // pnl_addItem
@@ -161,9 +155,9 @@
             this.pnl_addItem.Controls.Add(this.lbl_itemDesc);
             this.pnl_addItem.Controls.Add(this.txt_itemName);
             this.pnl_addItem.Controls.Add(this.lbl_itemName);
-            this.pnl_addItem.Location = new System.Drawing.Point(16, 96);
+            this.pnl_addItem.Location = new System.Drawing.Point(10, 137);
             this.pnl_addItem.Name = "pnl_addItem";
-            this.pnl_addItem.Size = new System.Drawing.Size(45, 26);
+            this.pnl_addItem.Size = new System.Drawing.Size(44, 23);
             this.pnl_addItem.TabIndex = 6;
             this.pnl_addItem.Visible = false;
             // 
@@ -461,8 +455,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteAll);
+            this.Controls.Add(this.pnl_EditItem);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pnl_addItem);
             this.Controls.Add(this.btn_AddItem);
             this.Controls.Add(this.dataGridViewItems);
