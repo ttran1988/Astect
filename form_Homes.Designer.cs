@@ -76,9 +76,9 @@
             // 
             this.btn_SelectHome.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_SelectHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SelectHome.Location = new System.Drawing.Point(186, 348);
+            this.btn_SelectHome.Location = new System.Drawing.Point(227, 348);
             this.btn_SelectHome.Name = "btn_SelectHome";
-            this.btn_SelectHome.Size = new System.Drawing.Size(93, 34);
+            this.btn_SelectHome.Size = new System.Drawing.Size(95, 36);
             this.btn_SelectHome.TabIndex = 1;
             this.btn_SelectHome.Text = "Select";
             this.btn_SelectHome.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@
             // 
             this.btn_HomeBack.BackColor = System.Drawing.Color.Tomato;
             this.btn_HomeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HomeBack.Location = new System.Drawing.Point(12, 369);
+            this.btn_HomeBack.Location = new System.Drawing.Point(12, 373);
             this.btn_HomeBack.Name = "btn_HomeBack";
-            this.btn_HomeBack.Size = new System.Drawing.Size(168, 58);
+            this.btn_HomeBack.Size = new System.Drawing.Size(161, 61);
             this.btn_HomeBack.TabIndex = 5;
             this.btn_HomeBack.Text = "Back";
             this.btn_HomeBack.UseVisualStyleBackColor = false;
@@ -99,21 +99,21 @@
             // dataGridViewHome
             // 
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHome.Location = new System.Drawing.Point(187, 98);
+            this.dataGridViewHome.Location = new System.Drawing.Point(227, 98);
             this.dataGridViewHome.Name = "dataGridViewHome";
             this.dataGridViewHome.ReadOnly = true;
             this.dataGridViewHome.RowHeadersWidth = 62;
             this.dataGridViewHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHome.Size = new System.Drawing.Size(548, 244);
+            this.dataGridViewHome.Size = new System.Drawing.Size(559, 244);
             this.dataGridViewHome.TabIndex = 3;
             // 
             // btn_Add
             // 
             this.btn_Add.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Location = new System.Drawing.Point(412, 348);
+            this.btn_Add.Location = new System.Drawing.Point(450, 348);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(92, 34);
+            this.btn_Add.Size = new System.Drawing.Size(95, 36);
             this.btn_Add.TabIndex = 3;
             this.btn_Add.Text = "New";
             this.btn_Add.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             this.pnl_AddHome.Controls.Add(this.btn_CancelHome);
             this.pnl_AddHome.Controls.Add(this.txt_HomeName);
             this.pnl_AddHome.Controls.Add(this.lbl_HomeName);
-            this.pnl_AddHome.Location = new System.Drawing.Point(12, 84);
+            this.pnl_AddHome.Location = new System.Drawing.Point(16, 98);
             this.pnl_AddHome.Name = "pnl_AddHome";
-            this.pnl_AddHome.Size = new System.Drawing.Size(44, 24);
+            this.pnl_AddHome.Size = new System.Drawing.Size(41, 29);
             this.pnl_AddHome.TabIndex = 5;
             this.pnl_AddHome.Visible = false;
             // 
@@ -147,7 +147,7 @@
             this.btn_HomeUpdate.Location = new System.Drawing.Point(261, 329);
             this.btn_HomeUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btn_HomeUpdate.Name = "btn_HomeUpdate";
-            this.btn_HomeUpdate.Size = new System.Drawing.Size(97, 33);
+            this.btn_HomeUpdate.Size = new System.Drawing.Size(95, 36);
             this.btn_HomeUpdate.TabIndex = 6;
             this.btn_HomeUpdate.Text = "Update";
             this.btn_HomeUpdate.UseVisualStyleBackColor = false;
@@ -249,7 +249,7 @@
             this.btn_CancelHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelHome.Location = new System.Drawing.Point(395, 329);
             this.btn_CancelHome.Name = "btn_CancelHome";
-            this.btn_CancelHome.Size = new System.Drawing.Size(97, 33);
+            this.btn_CancelHome.Size = new System.Drawing.Size(95, 36);
             this.btn_CancelHome.TabIndex = 7;
             this.btn_CancelHome.Text = "Cancel";
             this.btn_CancelHome.UseVisualStyleBackColor = false;
@@ -278,9 +278,9 @@
             // 
             this.btn_HomeEdit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_HomeEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HomeEdit.Location = new System.Drawing.Point(298, 348);
+            this.btn_HomeEdit.Location = new System.Drawing.Point(340, 348);
             this.btn_HomeEdit.Name = "btn_HomeEdit";
-            this.btn_HomeEdit.Size = new System.Drawing.Size(92, 34);
+            this.btn_HomeEdit.Size = new System.Drawing.Size(95, 36);
             this.btn_HomeEdit.TabIndex = 2;
             this.btn_HomeEdit.Text = "Edit";
             this.btn_HomeEdit.UseVisualStyleBackColor = false;
@@ -290,9 +290,9 @@
             // 
             this.btn_HomeDelete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_HomeDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HomeDelete.Location = new System.Drawing.Point(526, 348);
+            this.btn_HomeDelete.Location = new System.Drawing.Point(561, 348);
             this.btn_HomeDelete.Name = "btn_HomeDelete";
-            this.btn_HomeDelete.Size = new System.Drawing.Size(92, 34);
+            this.btn_HomeDelete.Size = new System.Drawing.Size(95, 36);
             this.btn_HomeDelete.TabIndex = 4;
             this.btn_HomeDelete.Text = "Delete";
             this.btn_HomeDelete.UseVisualStyleBackColor = false;
@@ -303,7 +303,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(747, 439);
+            this.ClientSize = new System.Drawing.Size(798, 446);
             this.Controls.Add(this.btn_HomeDelete);
             this.Controls.Add(this.pnl_AddHome);
             this.Controls.Add(this.btn_Add);

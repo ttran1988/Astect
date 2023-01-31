@@ -97,9 +97,9 @@
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.Tomato;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Location = new System.Drawing.Point(12, 385);
+            this.btn_Exit.Location = new System.Drawing.Point(12, 377);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(176, 53);
+            this.btn_Exit.Size = new System.Drawing.Size(161, 61);
             this.btn_Exit.TabIndex = 4;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -124,7 +124,7 @@
             this.ll_Forgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ll_Forgot.Location = new System.Drawing.Point(418, 199);
             this.ll_Forgot.Name = "ll_Forgot";
-            this.ll_Forgot.Size = new System.Drawing.Size(117, 16);
+            this.ll_Forgot.Size = new System.Drawing.Size(116, 16);
             this.ll_Forgot.TabIndex = 6;
             this.ll_Forgot.TabStop = true;
             this.ll_Forgot.Text = "Forgot Password?";

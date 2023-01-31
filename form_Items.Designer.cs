@@ -157,9 +157,9 @@
             this.pnl_addItem.Controls.Add(this.lbl_itemDesc);
             this.pnl_addItem.Controls.Add(this.txt_itemName);
             this.pnl_addItem.Controls.Add(this.lbl_itemName);
-            this.pnl_addItem.Location = new System.Drawing.Point(15, 15);
+            this.pnl_addItem.Location = new System.Drawing.Point(94, 15);
             this.pnl_addItem.Name = "pnl_addItem";
-            this.pnl_addItem.Size = new System.Drawing.Size(773, 423);
+            this.pnl_addItem.Size = new System.Drawing.Size(40, 38);
             this.pnl_addItem.TabIndex = 6;
             this.pnl_addItem.Visible = false;
             // 
@@ -438,7 +438,7 @@
             this.btnDelete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(474, 348);
+            this.btnDelete.Location = new System.Drawing.Point(470, 348);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 36);
             this.btnDelete.TabIndex = 3;
