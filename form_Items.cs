@@ -53,8 +53,9 @@ namespace Astect
             btnDeleteAll.Enabled = false;
  
             pnl_addItem.Location = new Point(16, 100);
-            pnl_addItem.Size = new Size(776, 384);
+            pnl_addItem.Size = new Size(773, 423);
             pnl_addItem.Visible = true;
+            pnl_addItem.BringToFront();
             txt_itemName.Focus();
         }
 
@@ -100,8 +101,9 @@ namespace Astect
             txtEditModelNbr.Text = selectedItemRow.Cells["ItemModel"].Value.ToString();
             txtEditSerialNbr.Text = selectedItemRow.Cells["ItemSerialNumber"].Value.ToString();
             pnl_EditItem.Location = new Point(16, 100);
-            pnl_EditItem.Size = new Size(776, 384);
+            pnl_EditItem.Size = new Size(773, 423);
             pnl_EditItem.Visible = true;
+            pnl_EditItem.BringToFront();
             txtEditItemName.Focus();
 
         }

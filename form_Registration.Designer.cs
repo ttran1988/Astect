@@ -42,10 +42,10 @@
             // 
             this.btn_RegistrationBack.BackColor = System.Drawing.Color.Tomato;
             this.btn_RegistrationBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RegistrationBack.Location = new System.Drawing.Point(11, 384);
+            this.btn_RegistrationBack.Location = new System.Drawing.Point(11, 378);
             this.btn_RegistrationBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_RegistrationBack.Name = "btn_RegistrationBack";
-            this.btn_RegistrationBack.Size = new System.Drawing.Size(146, 55);
+            this.btn_RegistrationBack.Size = new System.Drawing.Size(161, 61);
             this.btn_RegistrationBack.TabIndex = 4;
             this.btn_RegistrationBack.Text = "Back";
             this.btn_RegistrationBack.UseVisualStyleBackColor = false;
@@ -94,10 +94,10 @@
             // 
             this.btn_CreateUser.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_CreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CreateUser.Location = new System.Drawing.Point(323, 304);
+            this.btn_CreateUser.Location = new System.Drawing.Point(316, 308);
             this.btn_CreateUser.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CreateUser.Name = "btn_CreateUser";
-            this.btn_CreateUser.Size = new System.Drawing.Size(146, 55);
+            this.btn_CreateUser.Size = new System.Drawing.Size(161, 61);
             this.btn_CreateUser.TabIndex = 3;
             this.btn_CreateUser.Text = "Create";
             this.btn_CreateUser.UseVisualStyleBackColor = false;

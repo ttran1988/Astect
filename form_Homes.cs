@@ -55,10 +55,11 @@ namespace Astect
             txt_HomeState.Text = "";
             txt_HomeZIP.Text = "";
 
-            pnl_AddHome.Location = new Point(47, 37);
-            pnl_AddHome.Size = new Size(643, 374);
+            pnl_AddHome.Location = new Point(12, 9);
+            pnl_AddHome.Size = new Size(723, 418);
             btn_HomeSave.Visible = true;
             pnl_AddHome.Visible = true;
+            pnl_AddHome.BringToFront();
             txt_HomeName.Focus();
         }
 
@@ -94,10 +95,11 @@ namespace Astect
             txt_HomeState.Text = Convert.ToString(selectedRow.Cells["HomeState"].Value);
             txt_HomeZIP.Text = Convert.ToString(selectedRow.Cells["HomeZip"].Value);
 
-            pnl_AddHome.Location = new Point(47, 37);
-            pnl_AddHome.Size = new Size(643, 374);
+            pnl_AddHome.Location = new Point(12, 9);
+            pnl_AddHome.Size = new Size(723, 418);
             btn_HomeUpdate.Visible = true;
             pnl_AddHome.Visible = true;
+            pnl_AddHome.BringToFront();
             txt_HomeName.Focus();
         }
 
