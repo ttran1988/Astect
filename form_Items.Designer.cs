@@ -73,8 +73,8 @@
             // 
             // lbl_Home
             // 
-            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Home.Location = new System.Drawing.Point(80, 144);
+            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.Location = new System.Drawing.Point(60, 138);
             this.lbl_Home.Name = "lbl_Home";
             this.lbl_Home.Size = new System.Drawing.Size(243, 32);
             this.lbl_Home.TabIndex = 0;
@@ -105,8 +105,8 @@
             // 
             // lbl_UserName
             // 
-            this.lbl_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserName.Location = new System.Drawing.Point(80, 265);
+            this.lbl_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_UserName.Location = new System.Drawing.Point(60, 265);
             this.lbl_UserName.Name = "lbl_UserName";
             this.lbl_UserName.Size = new System.Drawing.Size(209, 32);
             this.lbl_UserName.TabIndex = 0;
@@ -114,8 +114,8 @@
             // 
             // lbl_HomeName
             // 
-            this.lbl_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HomeName.Location = new System.Drawing.Point(80, 176);
+            this.lbl_HomeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HomeName.Location = new System.Drawing.Point(60, 170);
             this.lbl_HomeName.Name = "lbl_HomeName";
             this.lbl_HomeName.Size = new System.Drawing.Size(242, 32);
             this.lbl_HomeName.TabIndex = 0;
@@ -123,8 +123,8 @@
             // 
             // lbl_CurrentText
             // 
-            this.lbl_CurrentText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentText.Location = new System.Drawing.Point(80, 233);
+            this.lbl_CurrentText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentText.Location = new System.Drawing.Point(60, 233);
             this.lbl_CurrentText.Name = "lbl_CurrentText";
             this.lbl_CurrentText.Size = new System.Drawing.Size(207, 32);
             this.lbl_CurrentText.TabIndex = 0;
