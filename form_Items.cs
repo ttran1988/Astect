@@ -52,8 +52,8 @@ namespace Astect
             btnDeleteAll.Visible = false;
             btnDeleteAll.Enabled = false;
  
-            pnl_addItem.Location = new Point(16, 100);
-            pnl_addItem.Size = new Size(773, 423);
+            pnl_addItem.Location = new Point(12, 12);
+            pnl_addItem.Size = new Size(780, 422);
             pnl_addItem.Visible = true;
             pnl_addItem.BringToFront();
             txt_itemName.Focus();
@@ -67,6 +67,8 @@ namespace Astect
             btnDelete.Enabled = true;
             btnEdit.Visible = true;
             btnEdit.Enabled = true;
+            btnDeleteAll.Visible = true;
+            btnDeleteAll.Enabled = true;
         }
 
         private void btn_ItemSave_Click(object sender, EventArgs e)
@@ -85,27 +87,34 @@ namespace Astect
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            btn_AddItem.Visible = false;
-            btn_AddItem.Enabled = false;
-            btnDelete.Visible = false;
-            btnDelete.Enabled = false;
-            btnDeleteAll.Visible = false;
-            btnDeleteAll.Enabled = false;
             int selectRowIndex = dataGridViewItems.SelectedCells[0].RowIndex;
             DataGridViewRow selectedItemRow = dataGridViewItems.Rows[selectRowIndex];
+            globalCurrentItemRowID = Convert.ToInt32(selectedItemRow.Cells["ItemID"].Value);
 
-            txtEditItemName.Text = selectedItemRow.Cells["ItemName"].Value.ToString();
-            txtEditItemDesc.Text = selectedItemRow.Cells["ItemDescription"].Value.ToString();
-            txtEditItemPrice.Text = selectedItemRow.Cells["ItemPrice"].Value.ToString();
-            globalCurrentItemRowID = Convert.ToInt32(selectedItemRow.Cells["ItemID"].Value.ToString());
-            txtEditModelNbr.Text = selectedItemRow.Cells["ItemModel"].Value.ToString();
-            txtEditSerialNbr.Text = selectedItemRow.Cells["ItemSerialNumber"].Value.ToString();
-            pnl_EditItem.Location = new Point(16, 100);
-            pnl_EditItem.Size = new Size(773, 423);
-            pnl_EditItem.Visible = true;
-            pnl_EditItem.BringToFront();
-            txtEditItemName.Focus();
+            if (globalCurrentItemRowID != 0)
+            {
+                btn_AddItem.Visible = false;
+                btn_AddItem.Enabled = false;
+                btnDelete.Visible = false;
+                btnDelete.Enabled = false;
+                btnDeleteAll.Visible = false;
+                btnDeleteAll.Enabled = false;
 
+                txtEditItemName.Text = selectedItemRow.Cells["ItemName"].Value.ToString();
+                txtEditItemDesc.Text = selectedItemRow.Cells["ItemDescription"].Value.ToString();
+                txtEditItemPrice.Text = selectedItemRow.Cells["ItemPrice"].Value.ToString();
+                txtEditModelNbr.Text = selectedItemRow.Cells["ItemModel"].Value.ToString();
+                txtEditSerialNbr.Text = selectedItemRow.Cells["ItemSerialNumber"].Value.ToString();
+                pnl_EditItem.Location = new Point(12, 12);
+                pnl_EditItem.Size = new Size(780, 422);
+                pnl_EditItem.Visible = true;
+                pnl_EditItem.BringToFront();
+                txtEditItemName.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid row");
+            }
         }
 
         private void btnEditSave_Click(object sender, EventArgs e)
@@ -141,16 +150,22 @@ namespace Astect
             DataGridViewRow selectedItemRow = dataGridViewItems.Rows[selectRowIndex];
 
             globalCurrentItemRowID = Convert.ToInt32(selectedItemRow.Cells["ItemID"].Value);
-            Console.WriteLine(globalCurrentItemRowID);
 
-            DialogResult answer = MessageBox.Show($"Are you sure you want to delete this item?\n\n " +
-                $"{selectedItemRow.Cells["ItemName"].Value.ToString()}\n\n", $"Delete {selectedItemRow.Cells["ItemName"].Value.ToString()}", 
-                MessageBoxButtons.YesNo); 
-
-            if(answer == DialogResult.Yes)
+            if (globalCurrentItemRowID != 0)
             {
-                db.deleteItem(globalCurrentItemRowID);
-                db.getHomeItemTable(dataGridViewItems);
+                DialogResult answer = MessageBox.Show($"Are you sure you want to delete this item?\n\n " +
+                $"{selectedItemRow.Cells["ItemName"].Value.ToString()}\n\n", $"Delete {selectedItemRow.Cells["ItemName"].Value.ToString()}",
+                MessageBoxButtons.YesNo);
+
+                if (answer == DialogResult.Yes)
+                {
+                    db.deleteItem(globalCurrentItemRowID);
+                    db.getHomeItemTable(dataGridViewItems);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid row");
             }
         }
 
