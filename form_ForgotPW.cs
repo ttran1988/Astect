@@ -47,7 +47,7 @@ namespace Astect
                     USER_NAME = txt_Username.Text;
                     txt_code.Text = "";
                     pnl_codeValidator.Location = new Point(47, 37);
-                    pnl_codeValidator.Size = new Size(643, 374);
+                    pnl_codeValidator.Size = new Size(780, 422);
                     pnl_codeValidator.Visible = true;
                     txt_code.Focus();
                     break;
@@ -89,7 +89,7 @@ namespace Astect
                     if (email.isPasswordResetCodeValid(txt_code.Text) == true)
                     {
                         pnl_resetPassword.Location = new Point(47, 37);
-                        pnl_resetPassword.Size = new Size(643, 374);
+                        pnl_resetPassword.Size = new Size(780, 422);
                         pnl_resetPassword.Visible = true;
                     }
                     else

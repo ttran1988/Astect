@@ -36,15 +36,26 @@ namespace Astect
             lbl_HomeUserName.Text = form_LogIn.globalUserName;
         }
 
+        
+
         private void btn_SelectHome_Click(object sender, EventArgs e)
         {
             int selectRowIndex = dataGridViewHome.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridViewHome.Rows[selectRowIndex];
             globalHomeID = Convert.ToString(selectedRow.Cells["HomeID"].Value);
+            globalCurrentHomeRowID = globalCurrentHomeRowID = Convert.ToInt32(selectedRow.Cells["HomeID"].Value);
             globalHomeName = Convert.ToString(selectedRow.Cells["HomeName"].Value);
-            form_Items formItems = new form_Items();
-            formItems.Show();
-            this.Hide();
+
+            if (globalCurrentHomeRowID != 0)
+            {
+                form_Items formItems = new form_Items();
+                formItems.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid row");
+            }
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -55,8 +66,8 @@ namespace Astect
             txt_HomeState.Text = "";
             txt_HomeZIP.Text = "";
 
-            pnl_AddHome.Location = new Point(12, 9);
-            pnl_AddHome.Size = new Size(723, 418);
+            pnl_AddHome.Location = new Point(12, 12);
+            pnl_AddHome.Size = new Size(774, 422);
             btn_HomeSave.Visible = true;
             pnl_AddHome.Visible = true;
             pnl_AddHome.BringToFront();
@@ -95,12 +106,19 @@ namespace Astect
             txt_HomeState.Text = Convert.ToString(selectedRow.Cells["HomeState"].Value);
             txt_HomeZIP.Text = Convert.ToString(selectedRow.Cells["HomeZip"].Value);
 
-            pnl_AddHome.Location = new Point(12, 9);
-            pnl_AddHome.Size = new Size(723, 418);
-            btn_HomeUpdate.Visible = true;
-            pnl_AddHome.Visible = true;
-            pnl_AddHome.BringToFront();
-            txt_HomeName.Focus();
+            if (globalCurrentHomeRowID != 0)
+            {
+                pnl_AddHome.Location = new Point(12, 12);
+                pnl_AddHome.Size = new Size(780, 422);
+                btn_HomeUpdate.Visible = true;
+                pnl_AddHome.Visible = true;
+                pnl_AddHome.BringToFront();
+                txt_HomeName.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid row");
+            }
         }
 
         private void btn_HomeUpdate_Click(object sender, EventArgs e)
@@ -123,12 +141,19 @@ namespace Astect
             DataGridViewRow selectedRow = dataGridViewHome.Rows[selectRowIndex];
             globalCurrentHomeRowID = Convert.ToInt32(selectedRow.Cells["HomeID"].Value);
 
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this home?", "Delete Home", MessageBoxButtons.YesNo);
-
-            if (dialogResult == DialogResult.Yes)
+            if (globalCurrentHomeRowID != 0)
             {
-                db.deleteHome(globalCurrentHomeRowID);
-                db.getUserHomeTable(dataGridViewHome);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this home?", "Delete Home", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    db.deleteHome(globalCurrentHomeRowID);
+                    db.getUserHomeTable(dataGridViewHome);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a valid row");
             }
         }
     }
