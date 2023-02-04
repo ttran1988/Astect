@@ -142,6 +142,27 @@ namespace Astect
             }
         }
 
+        public void updateEmail(string userName, string email)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "updateEmail";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@email", SqlDbType.VarChar).Value = email;
+                    cmd.Parameters.AddWithValue("@userName", SqlDbType.Int).Value = userName;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
         public void addItem(string item, string description, string price, int homeId, string modelNbr, string serialnbr)
         {
             try

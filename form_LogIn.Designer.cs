@@ -36,6 +36,7 @@
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_UserRegistration = new System.Windows.Forms.Button();
             this.ll_Forgot = new System.Windows.Forms.LinkLabel();
+            this.btnUpdateEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_UserName
@@ -130,12 +131,26 @@
             this.ll_Forgot.Text = "Forgot Password?";
             this.ll_Forgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ll_Forgot_LinkClicked);
             // 
+            // btnUpdateEmail
+            // 
+            this.btnUpdateEmail.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpdateEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateEmail.Location = new System.Drawing.Point(273, 366);
+            this.btnUpdateEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateEmail.Name = "btnUpdateEmail";
+            this.btnUpdateEmail.Size = new System.Drawing.Size(229, 42);
+            this.btnUpdateEmail.TabIndex = 7;
+            this.btnUpdateEmail.Text = "Update Email";
+            this.btnUpdateEmail.UseVisualStyleBackColor = false;
+            this.btnUpdateEmail.Click += new System.EventHandler(this.btnUpdateEmail_Click);
+            // 
             // form_LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdateEmail);
             this.Controls.Add(this.ll_Forgot);
             this.Controls.Add(this.btn_UserRegistration);
             this.Controls.Add(this.btn_Exit);
@@ -162,6 +177,7 @@
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_UserRegistration;
         private System.Windows.Forms.LinkLabel ll_Forgot;
+        private System.Windows.Forms.Button btnUpdateEmail;
     }
 }
 
