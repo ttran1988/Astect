@@ -156,5 +156,12 @@ namespace Astect
                 MessageBox.Show("Please select a valid row");
             }
         }
+
+        private void btn_AccountProfile_Click(object sender, EventArgs e)
+        {
+            form_AccountProfile ap = new form_AccountProfile();
+            ap.Show();
+            this.Hide();
+        }
     }
 }
