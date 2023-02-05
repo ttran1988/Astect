@@ -71,14 +71,5 @@ namespace Astect
             forgot.Visible = true;
             this.Hide();
         }
-
-        private void btnUpdateEmail_Click(object sender, EventArgs e)
-        {
-            form_UpdateEmail updateEmail = new form_UpdateEmail();
-            updateEmail.userID = globalUserID;
-            updateEmail.userName = globalUserName;
-            updateEmail.Visible = true;
-            this.Hide();
-        }
     }
 }
