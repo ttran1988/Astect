@@ -14,6 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Security.Cryptography;
 using Microsoft.SqlServer.Server;
 using System.ComponentModel;
+using System.Runtime.Versioning;
+using System.Web;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
+using System.Diagnostics;
 
 namespace Astect
 {
@@ -212,7 +216,28 @@ namespace Astect
                 MessageBox.Show(e.Message);
             }
         }
-
+        public void updateUserInfo(string fname, string lname, string phone, string username)
+        {
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                using (SqlCommand cmd = sqlConnect.CreateCommand())
+                {
+                    sqlConnect.Open();
+                    cmd.CommandText = "UpdateUserInfo";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@fname", SqlDbType.VarChar).Value = fname;
+                    cmd.Parameters.AddWithValue("@lname", SqlDbType.VarChar).Value = lname;
+                    cmd.Parameters.AddWithValue("@phone", SqlDbType.VarChar).Value = phone;
+                    cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = username;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
          public string getUserID(string username)
         {
             string getUserID = "";
@@ -294,6 +319,35 @@ namespace Astect
             {
                 MessageBox.Show(e.Message);
             }
+        }
+
+        public List<String> getUserInfo(String username)
+        {
+            List<String> UserInfoList = new List<String>();
+
+            try
+            {
+                using (sqlConnect = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT FName, LName, PhoneNum FROM Users WHERE Username = '" + username + "'";
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConnect);
+                    sqlConnect.Open();
+
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        UserInfoList.Add(Convert.ToString(dataReader["FName"]));
+                        UserInfoList.Add(Convert.ToString(dataReader["LName"]));
+                        UserInfoList.Add(Convert.ToString(dataReader["PhoneNum"]));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return UserInfoList;
         }
 
         public void getHomeItemTable(DataGridView dgv)

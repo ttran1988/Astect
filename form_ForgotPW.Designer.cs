@@ -121,10 +121,10 @@
             this.pnl_codeValidator.Controls.Add(this.btn_codeBack);
             this.pnl_codeValidator.Controls.Add(this.txt_code);
             this.pnl_codeValidator.Controls.Add(this.lbl_code);
-            this.pnl_codeValidator.Location = new System.Drawing.Point(85, 336);
-            this.pnl_codeValidator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_codeValidator.Location = new System.Drawing.Point(85, 346);
+            this.pnl_codeValidator.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_codeValidator.Name = "pnl_codeValidator";
-            this.pnl_codeValidator.Size = new System.Drawing.Size(66, 64);
+            this.pnl_codeValidator.Size = new System.Drawing.Size(60, 54);
             this.pnl_codeValidator.TabIndex = 6;
             this.pnl_codeValidator.Visible = false;
             // 
@@ -143,7 +143,7 @@
             this.btn_codeSubmit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_codeSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_codeSubmit.Location = new System.Drawing.Point(141, 218);
-            this.btn_codeSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_codeSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_codeSubmit.Name = "btn_codeSubmit";
             this.btn_codeSubmit.Size = new System.Drawing.Size(137, 56);
             this.btn_codeSubmit.TabIndex = 2;
@@ -156,10 +156,10 @@
             this.btn_codeBack.BackColor = System.Drawing.Color.Tomato;
             this.btn_codeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_codeBack.Location = new System.Drawing.Point(405, 218);
-            this.btn_codeBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_codeBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_codeBack.Name = "btn_codeBack";
             this.btn_codeBack.Size = new System.Drawing.Size(137, 56);
-            this.btn_codeBack.TabIndex = 2;
+            this.btn_codeBack.TabIndex = 3;
             this.btn_codeBack.Text = "Back";
             this.btn_codeBack.UseVisualStyleBackColor = false;
             this.btn_codeBack.Click += new System.EventHandler(this.btn_codeBack_Click);
@@ -168,7 +168,7 @@
             // 
             this.txt_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_code.Location = new System.Drawing.Point(212, 118);
-            this.txt_code.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_code.Margin = new System.Windows.Forms.Padding(2);
             this.txt_code.Name = "txt_code";
             this.txt_code.Size = new System.Drawing.Size(276, 26);
             this.txt_code.TabIndex = 1;
@@ -192,10 +192,10 @@
             this.pnl_resetPassword.Controls.Add(this.txt_enterPassword);
             this.pnl_resetPassword.Controls.Add(this.lbl_enterPasswordConfirm);
             this.pnl_resetPassword.Controls.Add(this.lbl_enterPassword);
-            this.pnl_resetPassword.Location = new System.Drawing.Point(585, 336);
-            this.pnl_resetPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_resetPassword.Location = new System.Drawing.Point(580, 346);
+            this.pnl_resetPassword.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_resetPassword.Name = "pnl_resetPassword";
-            this.pnl_resetPassword.Size = new System.Drawing.Size(68, 64);
+            this.pnl_resetPassword.Size = new System.Drawing.Size(73, 54);
             this.pnl_resetPassword.TabIndex = 7;
             this.pnl_resetPassword.Visible = false;
             // 
@@ -214,10 +214,10 @@
             this.btn_newPasswordSubmit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_newPasswordSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_newPasswordSubmit.Location = new System.Drawing.Point(85, 173);
-            this.btn_newPasswordSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_newPasswordSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_newPasswordSubmit.Name = "btn_newPasswordSubmit";
             this.btn_newPasswordSubmit.Size = new System.Drawing.Size(171, 61);
-            this.btn_newPasswordSubmit.TabIndex = 2;
+            this.btn_newPasswordSubmit.TabIndex = 3;
             this.btn_newPasswordSubmit.Text = "Submit";
             this.btn_newPasswordSubmit.UseVisualStyleBackColor = false;
             this.btn_newPasswordSubmit.Click += new System.EventHandler(this.btn_newPasswordSubmit_Click);
@@ -227,10 +227,10 @@
             this.btn_Cancel.BackColor = System.Drawing.Color.Tomato;
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(347, 173);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(171, 61);
-            this.btn_Cancel.TabIndex = 2;
+            this.btn_Cancel.TabIndex = 4;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -239,17 +239,17 @@
             // 
             this.txt_enterPasswordConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_enterPasswordConfirm.Location = new System.Drawing.Point(347, 88);
-            this.txt_enterPasswordConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_enterPasswordConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.txt_enterPasswordConfirm.Name = "txt_enterPasswordConfirm";
             this.txt_enterPasswordConfirm.PasswordChar = '*';
             this.txt_enterPasswordConfirm.Size = new System.Drawing.Size(241, 26);
-            this.txt_enterPasswordConfirm.TabIndex = 1;
+            this.txt_enterPasswordConfirm.TabIndex = 2;
             // 
             // txt_enterPassword
             // 
             this.txt_enterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_enterPassword.Location = new System.Drawing.Point(347, 35);
-            this.txt_enterPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_enterPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txt_enterPassword.Name = "txt_enterPassword";
             this.txt_enterPassword.PasswordChar = '*';
             this.txt_enterPassword.Size = new System.Drawing.Size(241, 26);
