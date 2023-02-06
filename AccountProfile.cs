@@ -137,5 +137,15 @@ namespace Astect
         {
             db.updateUserInfo(txtbox_FName.Text, txtbox_LName.Text, maskedTextBox_Phone.Text, form_LogIn.globalUserName);
         }
+
+        private void pnl_APChangeEmail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_APChangePassword_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
