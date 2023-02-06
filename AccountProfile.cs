@@ -24,6 +24,10 @@ namespace Astect
         {
             lbl_UserNameText.Text = form_LogIn.globalUserName;
             lbl_EmailText.Text = db.getUserEmail(form_LogIn.globalUserName);
+            List<String> userInfo = db.getUserInfo(form_LogIn.globalUserName);
+            txtbox_FName.Text = userInfo[0].Trim();
+            txtbox_LName.Text = userInfo[1].Trim();    
+            maskedTextBox_Phone.Text = userInfo[2].Trim(); 
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
@@ -128,6 +132,10 @@ namespace Astect
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+        private void btn_SaveInfo_Click(object sender, EventArgs e)
+        {
+            db.updateUserInfo(txtbox_FName.Text, txtbox_LName.Text, maskedTextBox_Phone.Text, form_LogIn.globalUserName);
         }
     }
 }

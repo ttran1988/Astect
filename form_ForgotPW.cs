@@ -88,6 +88,7 @@ namespace Astect
                 default:
                     if (email.isPasswordResetCodeValid(txt_code.Text) == true)
                     {
+                        pnl_codeValidator.Visible = false;
                         pnl_resetPassword.Location = new Point(47, 37);
                         pnl_resetPassword.Size = new Size(780, 422);
                         pnl_resetPassword.Visible = true;
@@ -99,7 +100,6 @@ namespace Astect
                     break;
             }
         }
-
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             form_LogIn formLogIn = new form_LogIn();
