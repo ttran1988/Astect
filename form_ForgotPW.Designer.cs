@@ -56,7 +56,7 @@
             // 
             this.lbl_Username.AutoSize = true;
             this.lbl_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Username.Location = new System.Drawing.Point(205, 125);
+            this.lbl_Username.Location = new System.Drawing.Point(208, 191);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(111, 24);
             this.lbl_Username.TabIndex = 0;
@@ -65,7 +65,7 @@
             // txt_Username
             // 
             this.txt_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_Username.Location = new System.Drawing.Point(347, 122);
+            this.txt_Username.Location = new System.Drawing.Point(350, 188);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(254, 26);
             this.txt_Username.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             this.btn_forgotPW.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_forgotPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_forgotPW.Location = new System.Drawing.Point(249, 197);
+            this.btn_forgotPW.Location = new System.Drawing.Point(436, 241);
             this.btn_forgotPW.Name = "btn_forgotPW";
             this.btn_forgotPW.Size = new System.Drawing.Size(117, 59);
             this.btn_forgotPW.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.lbl_forgotPW.AutoSize = true;
             this.lbl_forgotPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_forgotPW.Location = new System.Drawing.Point(145, 48);
+            this.lbl_forgotPW.Location = new System.Drawing.Point(148, 114);
             this.lbl_forgotPW.Name = "lbl_forgotPW";
             this.lbl_forgotPW.Size = new System.Drawing.Size(542, 24);
             this.lbl_forgotPW.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             this.btn_Back.BackColor = System.Drawing.Color.Tomato;
             this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Back.Location = new System.Drawing.Point(455, 197);
+            this.btn_Back.Location = new System.Drawing.Point(313, 241);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(117, 59);
             this.btn_Back.TabIndex = 3;
@@ -109,7 +109,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Error.Location = new System.Drawing.Point(344, 155);
+            this.lbl_Error.Location = new System.Drawing.Point(347, 221);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(0, 17);
             this.lbl_Error.TabIndex = 5;
@@ -121,10 +121,10 @@
             this.pnl_codeValidator.Controls.Add(this.btn_codeBack);
             this.pnl_codeValidator.Controls.Add(this.txt_code);
             this.pnl_codeValidator.Controls.Add(this.lbl_code);
-            this.pnl_codeValidator.Location = new System.Drawing.Point(85, 346);
+            this.pnl_codeValidator.Location = new System.Drawing.Point(11, 381);
             this.pnl_codeValidator.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_codeValidator.Name = "pnl_codeValidator";
-            this.pnl_codeValidator.Size = new System.Drawing.Size(60, 54);
+            this.pnl_codeValidator.Size = new System.Drawing.Size(117, 54);
             this.pnl_codeValidator.TabIndex = 6;
             this.pnl_codeValidator.Visible = false;
             // 
@@ -198,6 +198,7 @@
             this.pnl_resetPassword.Size = new System.Drawing.Size(73, 54);
             this.pnl_resetPassword.TabIndex = 7;
             this.pnl_resetPassword.Visible = false;
+            this.pnl_resetPassword.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_resetPassword_Paint);
             // 
             // lbl_newPasswordError
             // 

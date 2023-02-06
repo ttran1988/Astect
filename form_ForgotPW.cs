@@ -128,5 +128,10 @@ namespace Astect
                 this.Hide();
             }
         }
+
+        private void pnl_resetPassword_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
