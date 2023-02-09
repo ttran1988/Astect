@@ -66,6 +66,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDeleteAll = new System.Windows.Forms.Button();
+            this.btn_ExportItems = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             this.pnl_addItem.SuspendLayout();
             this.pnl_EditItem.SuspendLayout();
@@ -495,6 +496,20 @@
             this.btnDeleteAll.UseVisualStyleBackColor = false;
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
+            // btn_ExportItems
+            // 
+            this.btn_ExportItems.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_ExportItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ExportItems.ForeColor = System.Drawing.Color.Black;
+            this.btn_ExportItems.Location = new System.Drawing.Point(1040, 535);
+            this.btn_ExportItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_ExportItems.Name = "btn_ExportItems";
+            this.btn_ExportItems.Size = new System.Drawing.Size(142, 55);
+            this.btn_ExportItems.TabIndex = 3;
+            this.btn_ExportItems.Text = "Export";
+            this.btn_ExportItems.UseVisualStyleBackColor = false;
+            this.btn_ExportItems.Click += new System.EventHandler(this.btn_ExportItems_Click);
+            // 
             // form_Items
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -504,6 +519,7 @@
             this.Controls.Add(this.pnl_addItem);
             this.Controls.Add(this.btnDeleteAll);
             this.Controls.Add(this.pnl_EditItem);
+            this.Controls.Add(this.btn_ExportItems);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btn_AddItem);
@@ -566,5 +582,6 @@
         private System.Windows.Forms.TextBox txtEditItemName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnDeleteAll;
+        private System.Windows.Forms.Button btn_ExportItems;
     }
 }

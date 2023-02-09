@@ -18,6 +18,8 @@ using System.Runtime.Versioning;
 using System.Web;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.IO;
 
 namespace Astect
 {
@@ -479,8 +481,6 @@ namespace Astect
         }
         return login;
         }
-
-
         public void updateUserPassword(string username, string password)
         {
             Random random = new Random();
@@ -502,6 +502,65 @@ namespace Astect
                     cmd.Parameters.AddWithValue("@Salt", SqlDbType.VarChar).Value = salt;
                     cmd.Parameters.AddWithValue("@UserName", SqlDbType.VarChar).Value = username;
                     cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public void exportToCSV(int homeID)
+        {
+            try
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Title = "Name Your File";
+                save.Filter = "CSV Files (*csv)|*csv";
+                
+
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    using (sqlConnect = new SqlConnection(connectionString))
+                    {
+                        string homeQuery = "select * from homes where homeID = '" + homeID + "'";
+                        SqlCommand cm = new SqlCommand(homeQuery, sqlConnect);
+                        sqlConnect.Open();
+                        SqlDataReader homeReader = cm.ExecuteReader();
+
+                        StreamWriter csvFile = new StreamWriter(File.Create(save.FileName));
+
+                        while (homeReader.Read())
+                        {
+                            csvFile.WriteLine(String.Format("{0},{1},{2},{3},{4}",
+                                homeReader[1], homeReader[2], homeReader[3], homeReader[4], homeReader[5]));
+                        }
+                        
+                        homeReader.Close();
+
+                        string itemQuery = "select * from items where homeID = '" + homeID + "'";
+                        SqlCommand cmd = new SqlCommand(itemQuery, sqlConnect);
+                        
+                        SqlDataReader itemReader = cmd.ExecuteReader();
+
+                        csvFile.WriteLine("");
+
+                        csvFile.WriteLine(String.Format("{0},{1},{2},{3},{4}",
+                                itemReader.GetName(1), itemReader.GetName(2), itemReader.GetName(3),
+                                itemReader.GetName(5), itemReader.GetName(6)));
+
+                        csvFile.WriteLine("");
+
+                        while (itemReader.Read())
+                        {
+                            csvFile.WriteLine(String.Format("{0},{1},{2}," +
+                                "{3},{4}",
+                                itemReader[1], itemReader[2], itemReader[3],
+                                itemReader[5], itemReader[6]));
+                        }
+                        csvFile.Dispose();
+                        MessageBox.Show("Export successful");
+                    }
                 }
             }
             catch (Exception e)
