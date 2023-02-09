@@ -179,5 +179,10 @@ namespace Astect
                 db.getHomeItemTable(dataGridViewItems);
             }
         }
+
+        private void btn_ExportItems_Click(object sender, EventArgs e)
+        {
+            db.exportToCSV(Convert.ToInt32(form_Homes.globalHomeID));
+        }
     }
 }
