@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Astect
 {
@@ -38,7 +39,28 @@ namespace Astect
             codeList.Add(code);
             smtpClient.Send(message);
         }
+        public void sendFileInEmail(string filePath, string email)
+        {
+            string fromMail = "astectscrum3@gmail.com";
+            string fromPassword = "mpwpasuygrsxatqr";
 
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(fromMail);
+            message.Subject = "Astect - File Export";
+            message.To.Add(new MailAddress(email));
+            message.Body = "<html><body> Here is your file export. <br> </body></html>";
+            message.IsBodyHtml = true;
+            Attachment attFile = new Attachment(filePath);
+            message.Attachments.Add(attFile);
+
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential(fromMail, fromPassword),
+                EnableSsl = true,
+            };
+            smtpClient.Send(message);
+        }
         private string getRandomResetCode()
         {
             Random random = new Random();

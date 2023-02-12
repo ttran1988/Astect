@@ -510,16 +510,40 @@ namespace Astect
             }
         }
 
-        public void exportToCSV(int homeID)
+        public void exportToCSV(int homeID, bool bOverride = false)
         {
+            /*bOverride: is used to allow the system to generate a file name instead of a user selected file name.
+             * bFile: is used to indicate whether a file name has been selected and the query can run.
+             * 
+             * */
             try
             {
+                bool bFile = false;
+                string saveFile = "";
                 SaveFileDialog save = new SaveFileDialog();
                 save.Title = "Name Your File";
-                save.Filter = "CSV Files (*csv)|*csv";
-                
+                save.Filter = "CSV Files (*.csv)|*.csv";
+                if (bOverride)
+                {
+                    //generate a system file-name
+                    saveFile = AppContext.BaseDirectory + @"\HomeExport_" + homeID.ToString() + ".csv";
+                    if(File.Exists(saveFile))
+                    {
+                        File.Delete(saveFile);
+                    }
+                    bFile = true;
+                }
+                else
+                {
+                    //get the user file-name
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        saveFile = save.FileName;
+                        bFile = true;
+                    }
+                }
 
-                if (save.ShowDialog() == DialogResult.OK)
+                if (bFile)
                 {
                     using (sqlConnect = new SqlConnection(connectionString))
                     {
@@ -528,7 +552,7 @@ namespace Astect
                         sqlConnect.Open();
                         SqlDataReader homeReader = cm.ExecuteReader();
 
-                        StreamWriter csvFile = new StreamWriter(File.Create(save.FileName));
+                        StreamWriter csvFile = new StreamWriter(File.Create(saveFile));
 
                         while (homeReader.Read())
                         {
