@@ -110,7 +110,7 @@
             this.btn_UserRegistration.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_UserRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_UserRegistration.Location = new System.Drawing.Point(273, 308);
-            this.btn_UserRegistration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_UserRegistration.Margin = new System.Windows.Forms.Padding(2);
             this.btn_UserRegistration.Name = "btn_UserRegistration";
             this.btn_UserRegistration.Size = new System.Drawing.Size(229, 42);
             this.btn_UserRegistration.TabIndex = 5;
@@ -124,7 +124,7 @@
             this.ll_Forgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ll_Forgot.Location = new System.Drawing.Point(418, 199);
             this.ll_Forgot.Name = "ll_Forgot";
-            this.ll_Forgot.Size = new System.Drawing.Size(117, 16);
+            this.ll_Forgot.Size = new System.Drawing.Size(116, 16);
             this.ll_Forgot.TabIndex = 6;
             this.ll_Forgot.TabStop = true;
             this.ll_Forgot.Text = "Forgot Password?";
@@ -147,6 +147,7 @@
             this.Name = "form_LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.form_LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

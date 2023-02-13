@@ -71,5 +71,10 @@ namespace Astect
             forgot.Visible = true;
             this.Hide();
         }
+
+        private void form_LogIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

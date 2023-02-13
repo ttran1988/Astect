@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Astect
 {
@@ -20,6 +21,7 @@ namespace Astect
         }
 
         Database db = new Database();
+        Email eml= new Email();
 
         private void form_Items_Load(object sender, EventArgs e)
         {
@@ -183,6 +185,22 @@ namespace Astect
         private void btn_ExportItems_Click(object sender, EventArgs e)
         {
             db.exportToCSV(Convert.ToInt32(form_Homes.globalHomeID));
+        }
+
+        private void btn_exportEmail_Click(object sender, EventArgs e)
+        {
+            //2 steps
+            //1-create export file (over-ride)
+            db.exportToCSV(Convert.ToInt32(form_Homes.globalHomeID),true);
+            //2-email that file
+            string saveFile = AppContext.BaseDirectory + @"\HomeExport_" + form_Homes.globalHomeID.ToString() + ".csv";
+            string results = db.getUserEmail(lbl_UserName.Text);
+            eml.sendFileInEmail(saveFile, results);
+            //3-delete file
+            //if (File.Exists(saveFile))
+            //{
+            //    File.Delete(saveFile);
+            //}
         }
     }
 }

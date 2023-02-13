@@ -22,10 +22,6 @@ namespace Astect
 
         private void btn_forgotPW_Click(object sender, EventArgs e)
         {
-            //TODO
-            //1 - verify the username exists in the database = DONE
-            //2 - verify that an email exists for the username = DONE
-            //3 - send an email recovery link to the email address
             lbl_Error.Text = "";
             string results = db.getUserEmail(txt_Username.Text);
             //RETURN VALUES
